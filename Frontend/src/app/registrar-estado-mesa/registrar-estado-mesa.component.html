@@ -1,0 +1,15 @@
+<div class="container mt-4">
+  <h3><i class="fas fa-plus-circle me-2 text-success"></i>Registrar Estado de Mesa</h3>
+
+  <form (ngSubmit)="registrar()">
+    <div class="mb-3">
+      <label for="descripcion" class="form-label">Descripción</label>
+      <input type="text" id="descripcion" class="form-control" [(ngModel)]="estadoMesa.descripcion" name="descripcion" required>
+    </div>
+
+    <button type="submit" class="btn btn-success">
+      <i class="fas fa-save me-1"></i>Guardar
+    </button>
+    <a routerLink="/home/estado-mesa" class="btn btn-secondary ms-2">Cancelar</a>
+  </form>
+</div>

@@ -1,0 +1,69 @@
+<div class="container-fluid p-4">
+  <!-- Botón superior para enviar a RabbitMQ -->
+  <div class="d-flex justify-content-end mb-3">
+    <button class="btn btn-success" (click)="enviarReservasARabbit()" [disabled]="enviando">
+      <i class="fas fa-paper-plane me-1"></i>
+      {{ enviando ? 'Enviando...' : 'Enviar todas las reservas a RabbitMQ' }}
+    </button>
+  </div>
+
+  <!-- Tabla de reservas -->
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered align-middle">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Fecha</th>
+          <th scope="col">Hora</th>
+          <th scope="col">Personas</th>
+          <th scope="col">Usuario</th>
+          <th scope="col">Ubicación</th>
+          <th scope="col">ID Mesa</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let r of reservas; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ r.fecha }}</td>
+          <td>{{ r.hora }}</td>
+          <td>{{ r.numeroPersonas }}</td>
+          <td>{{ r.usuario.nombre }}</td>
+          <td>{{ r.mesa.ubicacion }}</td>
+          <td>{{ r.mesa.idMesa }}</td>
+          <td>
+            <button class="btn btn-sm btn-outline-primary me-2" [routerLink]="['/home/reservas/actualizar-reserva', r.idReserva]">
+              <i class="fas fa-edit"></i> Editar
+            </button>
+            <button class="btn btn-sm btn-outline-danger" (click)="eliminarReserva(r.idReserva)">
+              <i class="fas fa-trash-alt"></i> Eliminar
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Mensaje si no hay reservas -->
+  <div *ngIf="reservas.length === 0" class="alert alert-warning text-center mt-3">
+    <i class="fas fa-exclamation-triangle me-2"></i>No hay reservas registradas.
+  </div>
+
+  <!-- Mensaje de éxito al eliminar -->
+  <div *ngIf="mensaje" class="alert alert-success mt-3 text-center">
+    {{ mensaje }}
+  </div>
+
+  <!-- Mensaje de error al eliminar -->
+  <div *ngIf="error" class="alert alert-danger mt-3 text-center">
+    {{ error }}
+  </div>
+
+  <!-- Mensaje de envío a RabbitMQ -->
+  <div *ngIf="mensajeEnvio" class="alert alert-info mt-3 text-center">
+    {{ mensajeEnvio }}
+  </div>
+</div>
+
+
+

@@ -1,0 +1,30 @@
+<div class="container mt-4">
+  <h3 class="mb-3 text-center">Actualizar Reserva</h3>
+  <form (ngSubmit)="actualizarReserva()" *ngIf="reserva">
+    <div class="mb-3">
+      <label>Fecha:</label>
+      <input type="date" class="form-control" [(ngModel)]="reserva.fecha" name="fecha" required>
+    </div>
+    <div class="mb-3">
+      <label>Hora:</label>
+      <input type="time" class="form-control" [(ngModel)]="reserva.hora" name="hora" required>
+    </div>
+    <div class="mb-3">
+      <label>Número de personas:</label>
+      <input type="number" class="form-control" [(ngModel)]="reserva.numeroPersonas" name="numeroPersonas" required>
+    </div>
+    <div class="mb-3">
+  <label>Mesa disponible:</label>
+  <select class="form-control" [(ngModel)]="reserva.mesa.idMesa" name="idMesa" required>
+    <option *ngFor="let mesa of mesasDisponibles" [value]="mesa.idMesa">
+      Mesa {{ mesa.numero }} - Capacidad: {{ mesa.capacidad }} - {{ mesa.ubicacion }}
+    </option>
+  </select>
+</div>
+    <button class="btn btn-success" type="submit">Actualizar</button>
+  </form>
+
+  <div *ngIf="mensaje" class="alert alert-success mt-3">{{ mensaje }}</div>
+  <div *ngIf="error" class="alert alert-danger mt-3">{{ error }}</div>
+</div>
+

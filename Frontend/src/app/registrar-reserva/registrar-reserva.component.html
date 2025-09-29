@@ -1,0 +1,80 @@
+<div class="container mt-5 p-4 rounded shadow" style="background: #1f1f1f; color: #f1f1f1; border: 1px solid #444;">
+  <h3 class="mb-4 text-warning"><i class="fas fa-calendar-check me-2"></i>Registrar Reserva</h3>
+
+  <form (ngSubmit)="registrar()">
+    <div class="mb-3">
+      <label class="form-label text-light"><i class="fas fa-calendar-alt me-2"></i>Fecha</label>
+      <input
+        type="date"
+        class="form-control bg-dark text-light border-warning shadow-sm"
+        [(ngModel)]="reserva.fecha"
+        name="fecha"
+        required
+      />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label text-light"><i class="fas fa-clock me-2"></i>Hora</label>
+      <input
+        type="time"
+        class="form-control bg-dark text-light border-warning shadow-sm"
+        [(ngModel)]="reserva.hora"
+        name="hora"
+        required
+      />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label text-light"><i class="fas fa-users me-2"></i>Número de Personas</label>
+      <input
+        type="number"
+        class="form-control bg-dark text-light border-warning shadow-sm"
+        [(ngModel)]="reserva.numeroPersonas"
+        name="numeroPersonas"
+        required
+        min="1"
+        max="6"
+        placeholder="Máximo 6 personas"
+      />
+    </div>
+
+    <!--<div class="mb-3">
+      <label class="form-label text-light"><i class="fas fa-chair me-2"></i>Mesa</label>
+      <select
+        class="form-select bg-dark text-light border-warning shadow-sm"
+        [(ngModel)]="reserva.mesa.idMesa"
+        name="mesa"
+        required
+      >
+        <option *ngFor="let m of mesas" [value]="m.idMesa">
+          Mesa #{{ m.numero }} (Capacidad: {{ m.capacidad }})
+        </option>
+      </select>
+    </div>
+  -->
+    <div class="mb-3">
+  <label class="form-label text-light">
+    <i class="fas fa-chair me-2"></i>Mesa
+  </label>
+  <div *ngIf="mesas.length === 0" class="text-warning fst-italic">
+    No hay mesas disponibles
+  </div>
+  <select
+    *ngIf="mesas.length > 0"
+    class="form-select bg-dark text-light border-warning shadow-sm"
+    [(ngModel)]="reserva.mesa.idMesa"
+    name="mesa"
+    required
+  >
+    <option *ngFor="let m of mesas" [value]="m.idMesa">
+      Mesa #{{ m.numero }} (Capacidad: {{ m.capacidad }})
+    </option>
+  </select>
+</div>
+
+    <button type="submit" class="btn btn-warning text-dark fw-bold shadow-sm">
+      <i class="fas fa-check-circle me-1"></i>Registrar
+    </button>
+  </form>
+</div>
+

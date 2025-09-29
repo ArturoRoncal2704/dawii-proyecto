@@ -1,0 +1,34 @@
+<div class="container mt-5 p-4 rounded shadow" style="background: #1f1f1f; color: #f1f1f1; border: 1px solid #444;">
+  <h3 class="mb-4 text-warning"><i class="fas fa-bus-alt me-2"></i>Registrar Transporte</h3>
+
+  <form (ngSubmit)="registrarTransporte()">
+    <div class="mb-3">
+      <label class="form-label text-light"><i class="fas fa-map-marker-alt me-2"></i>Dirección</label>
+      <input
+        type="text"
+        class="form-control bg-dark text-light border-warning shadow-sm"
+        [(ngModel)]="transporte.direccion"
+        name="direccion"
+        required
+        placeholder="Ingrese la dirección"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label text-light"><i class="fas fa-user-friends me-2"></i>Número de Pasajeros</label>
+      <input
+        type="number"
+        class="form-control bg-dark text-light border-warning shadow-sm"
+        [(ngModel)]="transporte.numeroPasajeros"
+        name="numeroPasajeros"
+        required
+        min="1"
+        placeholder="Ingrese la cantidad"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-warning text-dark fw-bold shadow-sm">
+      <i class="fas fa-check-circle me-1"></i>Registrar Transporte
+    </button>
+  </form>
+</div>

@@ -1,0 +1,22 @@
+<div class="container mt-4">
+  <h3>Actualizar Transporte</h3>
+
+  <form (ngSubmit)="actualizar()">
+    <div class="mb-3">
+      <label class="form-label">Dirección</label>
+      <input type="text" class="form-control" [(ngModel)]="transporte.direccion" name="direccion" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Número de Pasajeros</label>
+      <input type="number" class="form-control" [(ngModel)]="transporte.numeroPasajeros" name="numeroPasajeros" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">ID Reserva</label>
+      <input type="number" class="form-control" [(ngModel)]="transporte.idReserva" name="idReserva" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Actualizar</button>
+  </form>
+</div>
