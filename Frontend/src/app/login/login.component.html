@@ -1,0 +1,64 @@
+<div class="vh-100 d-flex align-items-center justify-content-center bg-dark bg-gradient">
+  <div class="card shadow-lg border-0 rounded-5 px-4 py-5" style="width: 100%; max-width: 400px; backdrop-filter: blur(14px); background: rgba(0, 0, 0, 0.6); border: 1px solid rgba(255,255,255,0.1);">
+    
+    <h2 class="text-center text-light mb-4">
+      <i class="fas fa-utensils me-2 text-warning"></i>Reserva tu mesa
+    </h2>
+
+    <form (ngSubmit)="login()" #formLogin="ngForm" novalidate>
+      
+      <div class="form-group mb-4">
+        <label for="email" class="form-label text-light">
+          <i class="fas fa-envelope text-warning me-2"></i>Correo electrónico
+        </label>
+        <input
+          type="email"
+          id="email"
+          class="form-control text-white bg-transparent border border-warning"
+          name="correo"
+          [(ngModel)]="correo"
+          required
+        />
+      </div>
+
+      <div class="form-group mb-4 position-relative">
+        <label for="password" class="form-label text-light">
+          <i class="fas fa-lock text-warning me-2"></i>Contraseña
+        </label>
+        <input
+          id="password"
+          class="form-control text-white bg-transparent border border-warning"
+          name="contrasena"
+          [(ngModel)]="contrasena"
+          required
+        />
+        <i
+          class="fas"
+          style="position: absolute; top: 50%; right: 16px; transform: translateY(-50%); cursor: pointer; color: rgba(255, 215, 0, 0.6);"
+        ></i>
+      </div>
+
+
+      <button
+        class="btn btn-warning btn-lg w-100 rounded-pill fw-semibold shadow-sm custom-btn"
+        type="submit"
+        style="transition: all 0.3s; color: #000;"
+      >
+        <i class="fas fa-sign-in-alt me-2"></i>Ingresar
+      </button>
+
+      <p class="text-danger mt-2 text-center" *ngIf="error">{{ error }}</p>
+
+      <p class="text-center mt-4 text-white">
+        ¿No tienes cuenta?
+        <a routerLink="/registro" class="text-decoration-none text-warning fw-bold">Regístrate aquí</a>
+      </p>
+    </form>
+  </div>
+</div>
+
+<style>
+  .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+</style>

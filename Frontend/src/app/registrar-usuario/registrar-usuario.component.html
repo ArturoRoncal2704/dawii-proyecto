@@ -1,0 +1,72 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="card shadow p-4" style="width: 100%; max-width: 400px; background-color: #1f1f1f; color: #f1f1f1; border: 1px solid #444;">
+    <h3 class="text-center mb-4 text-warning">
+      <i class="fas fa-user-plus me-2"></i>Registro
+    </h3>
+
+    <form (ngSubmit)="registrar()" #formReg="ngForm">
+      <div class="mb-3">
+        <label class="form-label text-light"><i class="fas fa-user me-2"></i>Nombre</label>
+        <input
+          type="text"
+          class="form-control bg-dark text-light border-warning shadow-sm"
+          name="nombre"
+          [(ngModel)]="usuario.nombre"
+          required
+        />
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label text-light"><i class="fas fa-envelope me-2"></i>Correo</label>
+        <input
+          type="email"
+          class="form-control bg-dark text-light border-warning shadow-sm"
+          name="correo"
+          [(ngModel)]="usuario.correo"
+          required
+        />
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label text-light"><i class="fas fa-lock me-2"></i>Contraseña</label>
+        <input
+          type="password"
+          class="form-control bg-dark text-light border-warning shadow-sm"
+          name="contrasena"
+          [(ngModel)]="usuario.contrasena"
+          required
+        />
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label text-light"><i class="fas fa-phone me-2"></i>Teléfono</label>
+        <input
+          type="text"
+          class="form-control bg-dark text-light border-warning shadow-sm"
+          name="telefono"
+          [(ngModel)]="usuario.telefono"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label text-light"><i class="fas fa-user-tag me-2"></i>Rol</label>
+        <select
+          class="form-select bg-dark text-light border-warning shadow-sm"
+          name="rol"
+          [(ngModel)]="usuario.rol"
+          required
+        >
+          <option value="" disabled selected hidden>Seleccionar</option>
+          <option *ngFor="let r of roles" [value]="r">{{ r }}</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-warning text-dark fw-bold w-100 shadow-sm">
+        <i class="fas fa-check-circle me-1"></i>Registrar
+      </button>
+
+      <div *ngIf="mensaje" class="alert alert-success mt-3">{{ mensaje }}</div>
+      <div *ngIf="error" class="alert alert-danger mt-3">{{ error }}</div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="container-fluid p-4">
+  <h3>Bienvenido </h3>
+        <p>Este es un panel de administración básico</p>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card text-white bg-primary mb-3">
+        <div class="card-body">
+          <h5 class="card-title"><i class="fas fa-calendar-alt me-2"></i>Reservas</h5>
+          <p class="card-text">Total: {{ totalReservas }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-white bg-success mb-3">
+        <div class="card-body">
+          <h5 class="card-title"><i class="fas fa-users me-2"></i>Usuarios</h5>
+          <p class="card-text">Total: {{ totalUsuarios }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-white bg-warning mb-3">
+        <div class="card-body">
+          <h5 class="card-title"><i class="fas fa-chair me-2"></i>Mesas Disponibles</h5>
+          <p class="card-text">Total: {{ totalMesasDisponibles }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,595 @@
+2025-10-13T20:35:48.370-05:00  INFO 16904 --- [global-config] [main] org.cibertec.AuthServerApplication       : Starting AuthServerApplication using Java 21.0.6 with PID 16904 (C:\DAWII\auth-server\target\classes started by User in C:\DAWII\auth-server)
+2025-10-13T20:35:48.372-05:00  INFO 16904 --- [global-config] [main] org.cibertec.AuthServerApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-10-13T20:35:48.392-05:00  INFO 16904 --- [global-config] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2025-10-13T20:35:48.392-05:00  INFO 16904 --- [global-config] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=auth-server, profiles=[default], label=null, version=null, state=null
+2025-10-13T20:35:48.392-05:00  INFO 16904 --- [global-config] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2025-10-13T20:35:48.392-05:00  INFO 16904 --- [global-config] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=global-config, profiles=[default], label=null, version=null, state=null
+2025-10-13T20:35:49.096-05:00  INFO 16904 --- [global-config] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-13T20:35:49.185-05:00  INFO 16904 --- [global-config] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 81 ms. Found 2 JPA repository interfaces.
+2025-10-13T20:35:49.349-05:00  INFO 16904 --- [global-config] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=ec9c9354-7a79-3514-bd7a-868c9962492c
+2025-10-13T20:35:49.596-05:00  INFO 16904 --- [global-config] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-13T20:35:49.604-05:00  INFO 16904 --- [global-config] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-13T20:35:49.604-05:00  INFO 16904 --- [global-config] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-10-13T20:35:49.642-05:00  INFO 16904 --- [global-config] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-13T20:35:49.642-05:00  INFO 16904 --- [global-config] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1249 ms
+2025-10-13T20:35:49.801-05:00  INFO 16904 --- [global-config] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-13T20:35:50.030-05:00  INFO 16904 --- [global-config] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@579ce2e9
+2025-10-13T20:35:50.035-05:00  INFO 16904 --- [global-config] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-13T20:35:50.064-05:00  INFO 16904 --- [global-config] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-13T20:35:50.115-05:00  INFO 16904 --- [global-config] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-10-13T20:35:50.144-05:00  INFO 16904 --- [global-config] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-13T20:35:50.360-05:00  INFO 16904 --- [global-config] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-13T20:35:50.456-05:00  INFO 16904 --- [global-config] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.34
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-13T20:35:51.110-05:00  INFO 16904 --- [global-config] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-13T20:35:51.112-05:00  INFO 16904 --- [global-config] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-13T20:35:51.323-05:00  WARN 16904 --- [global-config] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-13T20:35:51.342-05:00  INFO 16904 --- [global-config] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-10-13T20:35:51.464-05:00  WARN 16904 --- [global-config] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authorizationServerSecurityFilterChain' defined in class path resource [org/springframework/security/oauth2/server/authorization/config/annotation/web/configuration/OAuth2AuthorizationServerConfiguration.class]: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'authorizationServerSecurityFilterChain' threw exception with message: Error creating bean with name 'jwkSource' defined in class path resource [org/cibertec/conf/AuthorizationServerConf.class]: Unexpected exception during bean creation
+2025-10-13T20:35:51.465-05:00  INFO 16904 --- [global-config] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-13T20:35:51.467-05:00  INFO 16904 --- [global-config] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-13T20:35:51.471-05:00  INFO 16904 --- [global-config] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-13T20:35:51.474-05:00  INFO 16904 --- [global-config] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-10-13T20:35:51.485-05:00  INFO 16904 --- [global-config] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-10-13T20:35:51.497-05:00 ERROR 16904 --- [global-config] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authorizationServerSecurityFilterChain' defined in class path resource [org/springframework/security/oauth2/server/authorization/config/annotation/web/configuration/OAuth2AuthorizationServerConfiguration.class]: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'authorizationServerSecurityFilterChain' threw exception with message: Error creating bean with name 'jwkSource' defined in class path resource [org/cibertec/conf/AuthorizationServerConf.class]: Unexpected exception during bean creation
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1222) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1188) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1123) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.9.jar:3.4.9]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.4.9.jar:3.4.9]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.9.jar:3.4.9]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.9.jar:3.4.9]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.4.9.jar:3.4.9]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.4.9.jar:3.4.9]
+	at org.cibertec.AuthServerApplication.main(AuthServerApplication.java:11) ~[classes/:na]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'authorizationServerSecurityFilterChain' threw exception with message: Error creating bean with name 'jwkSource' defined in class path resource [org/cibertec/conf/AuthorizationServerConf.class]: Unexpected exception during bean creation
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:200) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:89) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:169) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-6.2.10.jar:6.2.10]
+	... 21 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jwkSource' defined in class path resource [org/cibertec/conf/AuthorizationServerConf.class]: Unexpected exception during bean creation
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1272) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2ConfigurerUtils.getOptionalBean(OAuth2ConfigurerUtils.java:243) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2ConfigurerUtils.getJwkSource(OAuth2ConfigurerUtils.java:160) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2ConfigurerUtils.getJwtEncoder(OAuth2ConfigurerUtils.java:143) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2ConfigurerUtils.getJwtGenerator(OAuth2ConfigurerUtils.java:128) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2ConfigurerUtils.getTokenGenerator(OAuth2ConfigurerUtils.java:108) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2TokenEndpointConfigurer.createDefaultAuthenticationProviders(OAuth2TokenEndpointConfigurer.java:251) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2TokenEndpointConfigurer.init(OAuth2TokenEndpointConfigurer.java:194) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2AuthorizationServerConfigurer.lambda$init$4(OAuth2AuthorizationServerConfigurer.java:335) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at java.base/java.util.LinkedHashMap$LinkedValues.forEach(LinkedHashMap.java:833) ~[na:na]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2AuthorizationServerConfigurer.init(OAuth2AuthorizationServerConfigurer.java:334) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2AuthorizationServerConfigurer.init(OAuth2AuthorizationServerConfigurer.java:83) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.init(AbstractConfiguredSecurityBuilder.java:388) ~[spring-security-config-6.4.9.jar:6.4.9]
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.doBuild(AbstractConfiguredSecurityBuilder.java:350) ~[spring-security-config-6.4.9.jar:6.4.9]
+	at org.springframework.security.config.annotation.AbstractSecurityBuilder.build(AbstractSecurityBuilder.java:38) ~[spring-security-config-6.4.9.jar:6.4.9]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configuration.OAuth2AuthorizationServerConfiguration.authorizationServerSecurityFilterChain(OAuth2AuthorizationServerConfiguration.java:65) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:172) ~[spring-beans-6.2.10.jar:6.2.10]
+	... 24 common frames omitted
+Caused by: org.springframework.util.PlaceholderResolutionException: Could not resolve placeholder 'app-keystore.path' in value "${app-keystore.path}"
+	at org.springframework.util.PlaceholderResolutionException.withValue(PlaceholderResolutionException.java:81) ~[spring-core-6.2.10.jar:6.2.10]
+	at org.springframework.util.PlaceholderParser$ParsedValue.resolve(PlaceholderParser.java:423) ~[spring-core-6.2.10.jar:6.2.10]
+	at org.springframework.util.PlaceholderParser.replacePlaceholders(PlaceholderParser.java:128) ~[spring-core-6.2.10.jar:6.2.10]
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:118) ~[spring-core-6.2.10.jar:6.2.10]
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:114) ~[spring-core-6.2.10.jar:6.2.10]
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:293) ~[spring-core-6.2.10.jar:6.2.10]
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:264) ~[spring-core-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:186) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:971) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1657) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1635) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.10.jar:6.2.10]
+	... 47 common frames omitted
+
+2025-10-13T20:36:09.636-05:00  INFO 26204 --- [global-config] [main] org.cibertec.AuthServerApplication       : Starting AuthServerApplication using Java 21.0.6 with PID 26204 (C:\DAWII\auth-server\target\classes started by User in C:\DAWII\auth-server)
+2025-10-13T20:36:09.637-05:00  INFO 26204 --- [global-config] [main] org.cibertec.AuthServerApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-10-13T20:36:09.656-05:00  INFO 26204 --- [global-config] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2025-10-13T20:36:09.656-05:00  INFO 26204 --- [global-config] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=auth-server, profiles=[default], label=null, version=null, state=null
+2025-10-13T20:36:09.656-05:00  INFO 26204 --- [global-config] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2025-10-13T20:36:09.656-05:00  INFO 26204 --- [global-config] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=global-config, profiles=[default], label=null, version=null, state=null
+2025-10-13T20:36:10.212-05:00  INFO 26204 --- [global-config] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-13T20:36:10.302-05:00  INFO 26204 --- [global-config] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 84 ms. Found 2 JPA repository interfaces.
+2025-10-13T20:36:10.446-05:00  INFO 26204 --- [global-config] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=ec9c9354-7a79-3514-bd7a-868c9962492c
+2025-10-13T20:36:10.672-05:00  INFO 26204 --- [global-config] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-13T20:36:10.681-05:00  INFO 26204 --- [global-config] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-13T20:36:10.681-05:00  INFO 26204 --- [global-config] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-10-13T20:36:10.723-05:00  INFO 26204 --- [global-config] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-13T20:36:10.724-05:00  INFO 26204 --- [global-config] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1067 ms
+2025-10-13T20:36:10.867-05:00  INFO 26204 --- [global-config] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-13T20:36:11.054-05:00  INFO 26204 --- [global-config] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@30a20fb3
+2025-10-13T20:36:11.056-05:00  INFO 26204 --- [global-config] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-13T20:36:11.080-05:00  INFO 26204 --- [global-config] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-13T20:36:11.110-05:00  INFO 26204 --- [global-config] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-10-13T20:36:11.129-05:00  INFO 26204 --- [global-config] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-13T20:36:11.286-05:00  INFO 26204 --- [global-config] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-13T20:36:11.345-05:00  INFO 26204 --- [global-config] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.34
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-13T20:36:11.896-05:00  INFO 26204 --- [global-config] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-13T20:36:11.899-05:00  INFO 26204 --- [global-config] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-13T20:36:12.081-05:00  WARN 26204 --- [global-config] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-13T20:36:12.101-05:00  INFO 26204 --- [global-config] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-10-13T20:36:12.177-05:00  WARN 26204 --- [global-config] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authorizationServerSecurityFilterChain' defined in class path resource [org/springframework/security/oauth2/server/authorization/config/annotation/web/configuration/OAuth2AuthorizationServerConfiguration.class]: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'authorizationServerSecurityFilterChain' threw exception with message: Error creating bean with name 'jwkSource' defined in class path resource [org/cibertec/conf/AuthorizationServerConf.class]: Unexpected exception during bean creation
+2025-10-13T20:36:12.178-05:00  INFO 26204 --- [global-config] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-13T20:36:12.179-05:00  INFO 26204 --- [global-config] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-13T20:36:12.183-05:00  INFO 26204 --- [global-config] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-13T20:36:12.184-05:00  INFO 26204 --- [global-config] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-10-13T20:36:12.194-05:00  INFO 26204 --- [global-config] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-10-13T20:36:12.205-05:00 ERROR 26204 --- [global-config] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authorizationServerSecurityFilterChain' defined in class path resource [org/springframework/security/oauth2/server/authorization/config/annotation/web/configuration/OAuth2AuthorizationServerConfiguration.class]: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'authorizationServerSecurityFilterChain' threw exception with message: Error creating bean with name 'jwkSource' defined in class path resource [org/cibertec/conf/AuthorizationServerConf.class]: Unexpected exception during bean creation
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1222) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1188) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1123) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.9.jar:3.4.9]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.4.9.jar:3.4.9]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.9.jar:3.4.9]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.9.jar:3.4.9]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.4.9.jar:3.4.9]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.4.9.jar:3.4.9]
+	at org.cibertec.AuthServerApplication.main(AuthServerApplication.java:11) ~[classes/:na]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'authorizationServerSecurityFilterChain' threw exception with message: Error creating bean with name 'jwkSource' defined in class path resource [org/cibertec/conf/AuthorizationServerConf.class]: Unexpected exception during bean creation
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:200) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:89) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:169) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-6.2.10.jar:6.2.10]
+	... 21 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jwkSource' defined in class path resource [org/cibertec/conf/AuthorizationServerConf.class]: Unexpected exception during bean creation
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1272) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2ConfigurerUtils.getOptionalBean(OAuth2ConfigurerUtils.java:243) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2ConfigurerUtils.getJwkSource(OAuth2ConfigurerUtils.java:160) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2ConfigurerUtils.getJwtEncoder(OAuth2ConfigurerUtils.java:143) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2ConfigurerUtils.getJwtGenerator(OAuth2ConfigurerUtils.java:128) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2ConfigurerUtils.getTokenGenerator(OAuth2ConfigurerUtils.java:108) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2TokenEndpointConfigurer.createDefaultAuthenticationProviders(OAuth2TokenEndpointConfigurer.java:251) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2TokenEndpointConfigurer.init(OAuth2TokenEndpointConfigurer.java:194) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2AuthorizationServerConfigurer.lambda$init$4(OAuth2AuthorizationServerConfigurer.java:335) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at java.base/java.util.LinkedHashMap$LinkedValues.forEach(LinkedHashMap.java:833) ~[na:na]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2AuthorizationServerConfigurer.init(OAuth2AuthorizationServerConfigurer.java:334) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2AuthorizationServerConfigurer.init(OAuth2AuthorizationServerConfigurer.java:83) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.init(AbstractConfiguredSecurityBuilder.java:388) ~[spring-security-config-6.4.9.jar:6.4.9]
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.doBuild(AbstractConfiguredSecurityBuilder.java:350) ~[spring-security-config-6.4.9.jar:6.4.9]
+	at org.springframework.security.config.annotation.AbstractSecurityBuilder.build(AbstractSecurityBuilder.java:38) ~[spring-security-config-6.4.9.jar:6.4.9]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configuration.OAuth2AuthorizationServerConfiguration.authorizationServerSecurityFilterChain(OAuth2AuthorizationServerConfiguration.java:65) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:172) ~[spring-beans-6.2.10.jar:6.2.10]
+	... 24 common frames omitted
+Caused by: org.springframework.util.PlaceholderResolutionException: Could not resolve placeholder 'app-keystore.path' in value "${app-keystore.path}"
+	at org.springframework.util.PlaceholderResolutionException.withValue(PlaceholderResolutionException.java:81) ~[spring-core-6.2.10.jar:6.2.10]
+	at org.springframework.util.PlaceholderParser$ParsedValue.resolve(PlaceholderParser.java:423) ~[spring-core-6.2.10.jar:6.2.10]
+	at org.springframework.util.PlaceholderParser.replacePlaceholders(PlaceholderParser.java:128) ~[spring-core-6.2.10.jar:6.2.10]
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:118) ~[spring-core-6.2.10.jar:6.2.10]
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:114) ~[spring-core-6.2.10.jar:6.2.10]
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:293) ~[spring-core-6.2.10.jar:6.2.10]
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:264) ~[spring-core-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:186) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:971) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1657) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1635) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.10.jar:6.2.10]
+	... 47 common frames omitted
+
+2025-10-13T20:39:10.401-05:00  INFO 27872 --- [global-config] [main] org.cibertec.AuthServerApplication       : Starting AuthServerApplication using Java 21.0.6 with PID 27872 (C:\DAWII\auth-server\target\classes started by User in C:\DAWII\auth-server)
+2025-10-13T20:39:10.402-05:00  INFO 27872 --- [global-config] [main] org.cibertec.AuthServerApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-10-13T20:39:10.422-05:00  INFO 27872 --- [global-config] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2025-10-13T20:39:10.422-05:00  INFO 27872 --- [global-config] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=auth-server, profiles=[default], label=null, version=null, state=null
+2025-10-13T20:39:10.422-05:00  INFO 27872 --- [global-config] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2025-10-13T20:39:10.422-05:00  INFO 27872 --- [global-config] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=global-config, profiles=[default], label=null, version=null, state=null
+2025-10-13T20:39:11.037-05:00  INFO 27872 --- [global-config] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-13T20:39:11.130-05:00  INFO 27872 --- [global-config] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 83 ms. Found 2 JPA repository interfaces.
+2025-10-13T20:39:11.296-05:00  INFO 27872 --- [global-config] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=ec9c9354-7a79-3514-bd7a-868c9962492c
+2025-10-13T20:39:11.528-05:00  INFO 27872 --- [global-config] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-13T20:39:11.535-05:00  INFO 27872 --- [global-config] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-13T20:39:11.536-05:00  INFO 27872 --- [global-config] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-10-13T20:39:11.574-05:00  INFO 27872 --- [global-config] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-13T20:39:11.574-05:00  INFO 27872 --- [global-config] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1151 ms
+2025-10-13T20:39:11.718-05:00  INFO 27872 --- [global-config] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-13T20:39:11.898-05:00  INFO 27872 --- [global-config] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4cd51e4e
+2025-10-13T20:39:11.899-05:00  INFO 27872 --- [global-config] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-13T20:39:11.924-05:00  INFO 27872 --- [global-config] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-13T20:39:11.956-05:00  INFO 27872 --- [global-config] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-10-13T20:39:11.974-05:00  INFO 27872 --- [global-config] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-13T20:39:12.129-05:00  INFO 27872 --- [global-config] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-13T20:39:12.189-05:00  INFO 27872 --- [global-config] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.34
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-13T20:39:12.713-05:00  INFO 27872 --- [global-config] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-13T20:39:12.715-05:00  INFO 27872 --- [global-config] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-13T20:39:12.888-05:00  WARN 27872 --- [global-config] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-13T20:39:12.907-05:00  INFO 27872 --- [global-config] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-10-13T20:39:12.983-05:00  WARN 27872 --- [global-config] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authorizationServerSecurityFilterChain' defined in class path resource [org/springframework/security/oauth2/server/authorization/config/annotation/web/configuration/OAuth2AuthorizationServerConfiguration.class]: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'authorizationServerSecurityFilterChain' threw exception with message: Error creating bean with name 'jwkSource' defined in class path resource [org/cibertec/conf/AuthorizationServerConf.class]: Unexpected exception during bean creation
+2025-10-13T20:39:12.983-05:00  INFO 27872 --- [global-config] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-13T20:39:12.984-05:00  INFO 27872 --- [global-config] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-13T20:39:12.988-05:00  INFO 27872 --- [global-config] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-13T20:39:12.989-05:00  INFO 27872 --- [global-config] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-10-13T20:39:12.998-05:00  INFO 27872 --- [global-config] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-10-13T20:39:13.008-05:00 ERROR 27872 --- [global-config] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authorizationServerSecurityFilterChain' defined in class path resource [org/springframework/security/oauth2/server/authorization/config/annotation/web/configuration/OAuth2AuthorizationServerConfiguration.class]: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'authorizationServerSecurityFilterChain' threw exception with message: Error creating bean with name 'jwkSource' defined in class path resource [org/cibertec/conf/AuthorizationServerConf.class]: Unexpected exception during bean creation
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1222) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1188) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1123) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.9.jar:3.4.9]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.4.9.jar:3.4.9]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.9.jar:3.4.9]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.9.jar:3.4.9]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.4.9.jar:3.4.9]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.4.9.jar:3.4.9]
+	at org.cibertec.AuthServerApplication.main(AuthServerApplication.java:11) ~[classes/:na]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'authorizationServerSecurityFilterChain' threw exception with message: Error creating bean with name 'jwkSource' defined in class path resource [org/cibertec/conf/AuthorizationServerConf.class]: Unexpected exception during bean creation
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:200) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:89) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:169) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-6.2.10.jar:6.2.10]
+	... 21 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jwkSource' defined in class path resource [org/cibertec/conf/AuthorizationServerConf.class]: Unexpected exception during bean creation
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1272) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2ConfigurerUtils.getOptionalBean(OAuth2ConfigurerUtils.java:243) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2ConfigurerUtils.getJwkSource(OAuth2ConfigurerUtils.java:160) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2ConfigurerUtils.getJwtEncoder(OAuth2ConfigurerUtils.java:143) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2ConfigurerUtils.getJwtGenerator(OAuth2ConfigurerUtils.java:128) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2ConfigurerUtils.getTokenGenerator(OAuth2ConfigurerUtils.java:108) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2TokenEndpointConfigurer.createDefaultAuthenticationProviders(OAuth2TokenEndpointConfigurer.java:251) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2TokenEndpointConfigurer.init(OAuth2TokenEndpointConfigurer.java:194) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2AuthorizationServerConfigurer.lambda$init$4(OAuth2AuthorizationServerConfigurer.java:335) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at java.base/java.util.LinkedHashMap$LinkedValues.forEach(LinkedHashMap.java:833) ~[na:na]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2AuthorizationServerConfigurer.init(OAuth2AuthorizationServerConfigurer.java:334) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2AuthorizationServerConfigurer.init(OAuth2AuthorizationServerConfigurer.java:83) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.init(AbstractConfiguredSecurityBuilder.java:388) ~[spring-security-config-6.4.9.jar:6.4.9]
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.doBuild(AbstractConfiguredSecurityBuilder.java:350) ~[spring-security-config-6.4.9.jar:6.4.9]
+	at org.springframework.security.config.annotation.AbstractSecurityBuilder.build(AbstractSecurityBuilder.java:38) ~[spring-security-config-6.4.9.jar:6.4.9]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configuration.OAuth2AuthorizationServerConfiguration.authorizationServerSecurityFilterChain(OAuth2AuthorizationServerConfiguration.java:65) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:172) ~[spring-beans-6.2.10.jar:6.2.10]
+	... 24 common frames omitted
+Caused by: org.springframework.util.PlaceholderResolutionException: Could not resolve placeholder 'app.keystore.path' in value "${app.keystore.path}"
+	at org.springframework.util.PlaceholderResolutionException.withValue(PlaceholderResolutionException.java:81) ~[spring-core-6.2.10.jar:6.2.10]
+	at org.springframework.util.PlaceholderParser$ParsedValue.resolve(PlaceholderParser.java:423) ~[spring-core-6.2.10.jar:6.2.10]
+	at org.springframework.util.PlaceholderParser.replacePlaceholders(PlaceholderParser.java:128) ~[spring-core-6.2.10.jar:6.2.10]
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:118) ~[spring-core-6.2.10.jar:6.2.10]
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:114) ~[spring-core-6.2.10.jar:6.2.10]
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:293) ~[spring-core-6.2.10.jar:6.2.10]
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:264) ~[spring-core-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:186) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:971) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1657) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1635) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.10.jar:6.2.10]
+	... 47 common frames omitted
+
+2025-10-13T20:39:20.756-05:00  INFO 27952 --- [global-config] [main] org.cibertec.AuthServerApplication       : Starting AuthServerApplication using Java 21.0.6 with PID 27952 (C:\DAWII\auth-server\target\classes started by User in C:\DAWII\auth-server)
+2025-10-13T20:39:20.758-05:00  INFO 27952 --- [global-config] [main] org.cibertec.AuthServerApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-10-13T20:39:20.777-05:00  INFO 27952 --- [global-config] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2025-10-13T20:39:20.777-05:00  INFO 27952 --- [global-config] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=auth-server, profiles=[default], label=null, version=null, state=null
+2025-10-13T20:39:20.778-05:00  INFO 27952 --- [global-config] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2025-10-13T20:39:20.778-05:00  INFO 27952 --- [global-config] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=global-config, profiles=[default], label=null, version=null, state=null
+2025-10-13T20:39:21.293-05:00  INFO 27952 --- [global-config] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-13T20:39:21.380-05:00  INFO 27952 --- [global-config] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 82 ms. Found 2 JPA repository interfaces.
+2025-10-13T20:39:21.515-05:00  INFO 27952 --- [global-config] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=ec9c9354-7a79-3514-bd7a-868c9962492c
+2025-10-13T20:39:21.726-05:00  INFO 27952 --- [global-config] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-13T20:39:21.734-05:00  INFO 27952 --- [global-config] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-13T20:39:21.734-05:00  INFO 27952 --- [global-config] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-10-13T20:39:21.769-05:00  INFO 27952 --- [global-config] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-13T20:39:21.770-05:00  INFO 27952 --- [global-config] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 991 ms
+2025-10-13T20:39:21.909-05:00  INFO 27952 --- [global-config] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-13T20:39:22.082-05:00  INFO 27952 --- [global-config] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@682d9f21
+2025-10-13T20:39:22.084-05:00  INFO 27952 --- [global-config] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-13T20:39:22.112-05:00  INFO 27952 --- [global-config] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-13T20:39:22.147-05:00  INFO 27952 --- [global-config] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-10-13T20:39:22.166-05:00  INFO 27952 --- [global-config] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-13T20:39:22.319-05:00  INFO 27952 --- [global-config] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-13T20:39:22.375-05:00  INFO 27952 --- [global-config] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.34
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-13T20:39:22.888-05:00  INFO 27952 --- [global-config] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-13T20:39:22.890-05:00  INFO 27952 --- [global-config] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-13T20:39:23.083-05:00  WARN 27952 --- [global-config] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-13T20:39:23.104-05:00  INFO 27952 --- [global-config] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-10-13T20:39:23.178-05:00  WARN 27952 --- [global-config] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authorizationServerSecurityFilterChain' defined in class path resource [org/springframework/security/oauth2/server/authorization/config/annotation/web/configuration/OAuth2AuthorizationServerConfiguration.class]: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'authorizationServerSecurityFilterChain' threw exception with message: Error creating bean with name 'jwkSource' defined in class path resource [org/cibertec/conf/AuthorizationServerConf.class]: Unexpected exception during bean creation
+2025-10-13T20:39:23.179-05:00  INFO 27952 --- [global-config] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-13T20:39:23.181-05:00  INFO 27952 --- [global-config] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-13T20:39:23.185-05:00  INFO 27952 --- [global-config] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-13T20:39:23.186-05:00  INFO 27952 --- [global-config] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-10-13T20:39:23.195-05:00  INFO 27952 --- [global-config] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-10-13T20:39:23.206-05:00 ERROR 27952 --- [global-config] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authorizationServerSecurityFilterChain' defined in class path resource [org/springframework/security/oauth2/server/authorization/config/annotation/web/configuration/OAuth2AuthorizationServerConfiguration.class]: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'authorizationServerSecurityFilterChain' threw exception with message: Error creating bean with name 'jwkSource' defined in class path resource [org/cibertec/conf/AuthorizationServerConf.class]: Unexpected exception during bean creation
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1222) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1188) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1123) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.9.jar:3.4.9]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.4.9.jar:3.4.9]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.9.jar:3.4.9]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.9.jar:3.4.9]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.4.9.jar:3.4.9]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.4.9.jar:3.4.9]
+	at org.cibertec.AuthServerApplication.main(AuthServerApplication.java:11) ~[classes/:na]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'authorizationServerSecurityFilterChain' threw exception with message: Error creating bean with name 'jwkSource' defined in class path resource [org/cibertec/conf/AuthorizationServerConf.class]: Unexpected exception during bean creation
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:200) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:89) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:169) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-6.2.10.jar:6.2.10]
+	... 21 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jwkSource' defined in class path resource [org/cibertec/conf/AuthorizationServerConf.class]: Unexpected exception during bean creation
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1272) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2ConfigurerUtils.getOptionalBean(OAuth2ConfigurerUtils.java:243) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2ConfigurerUtils.getJwkSource(OAuth2ConfigurerUtils.java:160) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2ConfigurerUtils.getJwtEncoder(OAuth2ConfigurerUtils.java:143) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2ConfigurerUtils.getJwtGenerator(OAuth2ConfigurerUtils.java:128) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2ConfigurerUtils.getTokenGenerator(OAuth2ConfigurerUtils.java:108) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2TokenEndpointConfigurer.createDefaultAuthenticationProviders(OAuth2TokenEndpointConfigurer.java:251) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2TokenEndpointConfigurer.init(OAuth2TokenEndpointConfigurer.java:194) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2AuthorizationServerConfigurer.lambda$init$4(OAuth2AuthorizationServerConfigurer.java:335) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at java.base/java.util.LinkedHashMap$LinkedValues.forEach(LinkedHashMap.java:833) ~[na:na]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2AuthorizationServerConfigurer.init(OAuth2AuthorizationServerConfigurer.java:334) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2AuthorizationServerConfigurer.init(OAuth2AuthorizationServerConfigurer.java:83) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.init(AbstractConfiguredSecurityBuilder.java:388) ~[spring-security-config-6.4.9.jar:6.4.9]
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.doBuild(AbstractConfiguredSecurityBuilder.java:350) ~[spring-security-config-6.4.9.jar:6.4.9]
+	at org.springframework.security.config.annotation.AbstractSecurityBuilder.build(AbstractSecurityBuilder.java:38) ~[spring-security-config-6.4.9.jar:6.4.9]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configuration.OAuth2AuthorizationServerConfiguration.authorizationServerSecurityFilterChain(OAuth2AuthorizationServerConfiguration.java:65) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:172) ~[spring-beans-6.2.10.jar:6.2.10]
+	... 24 common frames omitted
+Caused by: org.springframework.util.PlaceholderResolutionException: Could not resolve placeholder 'app.keystore.path' in value "${app.keystore.path}"
+	at org.springframework.util.PlaceholderResolutionException.withValue(PlaceholderResolutionException.java:81) ~[spring-core-6.2.10.jar:6.2.10]
+	at org.springframework.util.PlaceholderParser$ParsedValue.resolve(PlaceholderParser.java:423) ~[spring-core-6.2.10.jar:6.2.10]
+	at org.springframework.util.PlaceholderParser.replacePlaceholders(PlaceholderParser.java:128) ~[spring-core-6.2.10.jar:6.2.10]
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:118) ~[spring-core-6.2.10.jar:6.2.10]
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:114) ~[spring-core-6.2.10.jar:6.2.10]
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:293) ~[spring-core-6.2.10.jar:6.2.10]
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:264) ~[spring-core-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:186) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:971) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1657) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1635) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.10.jar:6.2.10]
+	... 47 common frames omitted
+
+2025-10-13T20:49:08.943-05:00  INFO 15132 --- [global-config] [main] org.cibertec.AuthServerApplication       : Starting AuthServerApplication using Java 21.0.6 with PID 15132 (C:\DAWII\auth-server\target\classes started by User in C:\DAWII\auth-server)
+2025-10-13T20:49:08.944-05:00  INFO 15132 --- [global-config] [main] org.cibertec.AuthServerApplication       : No active profile set, falling back to 1 default profile: "default"
+2025-10-13T20:49:08.963-05:00  INFO 15132 --- [global-config] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2025-10-13T20:49:08.963-05:00  INFO 15132 --- [global-config] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=auth-server, profiles=[default], label=null, version=null, state=null
+2025-10-13T20:49:08.963-05:00  INFO 15132 --- [global-config] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2025-10-13T20:49:08.963-05:00  INFO 15132 --- [global-config] [main] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=global-config, profiles=[default], label=null, version=null, state=null
+2025-10-13T20:49:09.498-05:00  INFO 15132 --- [global-config] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-13T20:49:09.577-05:00  INFO 15132 --- [global-config] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 73 ms. Found 2 JPA repository interfaces.
+2025-10-13T20:49:09.716-05:00  INFO 15132 --- [global-config] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=ec9c9354-7a79-3514-bd7a-868c9962492c
+2025-10-13T20:49:09.937-05:00  INFO 15132 --- [global-config] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-13T20:49:09.946-05:00  INFO 15132 --- [global-config] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-13T20:49:09.947-05:00  INFO 15132 --- [global-config] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-10-13T20:49:09.985-05:00  INFO 15132 --- [global-config] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-13T20:49:09.985-05:00  INFO 15132 --- [global-config] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1021 ms
+2025-10-13T20:49:10.131-05:00  INFO 15132 --- [global-config] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-13T20:49:10.307-05:00  INFO 15132 --- [global-config] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7b54a0a4
+2025-10-13T20:49:10.309-05:00  INFO 15132 --- [global-config] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-13T20:49:10.337-05:00  INFO 15132 --- [global-config] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-13T20:49:10.367-05:00  INFO 15132 --- [global-config] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-10-13T20:49:10.387-05:00  INFO 15132 --- [global-config] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-13T20:49:10.544-05:00  INFO 15132 --- [global-config] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-13T20:49:10.606-05:00  INFO 15132 --- [global-config] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.34
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-13T20:49:11.147-05:00  INFO 15132 --- [global-config] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-13T20:49:11.150-05:00  INFO 15132 --- [global-config] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-13T20:49:11.329-05:00  WARN 15132 --- [global-config] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-13T20:49:11.349-05:00  INFO 15132 --- [global-config] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customUserDetailsService
+2025-10-13T20:49:11.424-05:00  WARN 15132 --- [global-config] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authorizationServerSecurityFilterChain' defined in class path resource [org/springframework/security/oauth2/server/authorization/config/annotation/web/configuration/OAuth2AuthorizationServerConfiguration.class]: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'authorizationServerSecurityFilterChain' threw exception with message: Error creating bean with name 'jwkSource' defined in class path resource [org/cibertec/conf/AuthorizationServerConf.class]: Unexpected exception during bean creation
+2025-10-13T20:49:11.424-05:00  INFO 15132 --- [global-config] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-13T20:49:11.425-05:00  INFO 15132 --- [global-config] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-13T20:49:11.430-05:00  INFO 15132 --- [global-config] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-13T20:49:11.431-05:00  INFO 15132 --- [global-config] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-10-13T20:49:11.441-05:00  INFO 15132 --- [global-config] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-10-13T20:49:11.452-05:00 ERROR 15132 --- [global-config] [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authorizationServerSecurityFilterChain' defined in class path resource [org/springframework/security/oauth2/server/authorization/config/annotation/web/configuration/OAuth2AuthorizationServerConfiguration.class]: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'authorizationServerSecurityFilterChain' threw exception with message: Error creating bean with name 'jwkSource' defined in class path resource [org/cibertec/conf/AuthorizationServerConf.class]: Unexpected exception during bean creation
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1222) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1188) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1123) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.9.jar:3.4.9]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.4.9.jar:3.4.9]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.9.jar:3.4.9]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.9.jar:3.4.9]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.4.9.jar:3.4.9]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.4.9.jar:3.4.9]
+	at org.cibertec.AuthServerApplication.main(AuthServerApplication.java:11) ~[classes/:na]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.security.web.SecurityFilterChain]: Factory method 'authorizationServerSecurityFilterChain' threw exception with message: Error creating bean with name 'jwkSource' defined in class path resource [org/cibertec/conf/AuthorizationServerConf.class]: Unexpected exception during bean creation
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:200) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:89) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:169) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-6.2.10.jar:6.2.10]
+	... 21 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jwkSource' defined in class path resource [org/cibertec/conf/AuthorizationServerConf.class]: Unexpected exception during bean creation
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1272) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2ConfigurerUtils.getOptionalBean(OAuth2ConfigurerUtils.java:243) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2ConfigurerUtils.getJwkSource(OAuth2ConfigurerUtils.java:160) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2ConfigurerUtils.getJwtEncoder(OAuth2ConfigurerUtils.java:143) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2ConfigurerUtils.getJwtGenerator(OAuth2ConfigurerUtils.java:128) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2ConfigurerUtils.getTokenGenerator(OAuth2ConfigurerUtils.java:108) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2TokenEndpointConfigurer.createDefaultAuthenticationProviders(OAuth2TokenEndpointConfigurer.java:251) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2TokenEndpointConfigurer.init(OAuth2TokenEndpointConfigurer.java:194) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2AuthorizationServerConfigurer.lambda$init$4(OAuth2AuthorizationServerConfigurer.java:335) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at java.base/java.util.LinkedHashMap$LinkedValues.forEach(LinkedHashMap.java:833) ~[na:na]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2AuthorizationServerConfigurer.init(OAuth2AuthorizationServerConfigurer.java:334) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configurers.OAuth2AuthorizationServerConfigurer.init(OAuth2AuthorizationServerConfigurer.java:83) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.init(AbstractConfiguredSecurityBuilder.java:388) ~[spring-security-config-6.4.9.jar:6.4.9]
+	at org.springframework.security.config.annotation.AbstractConfiguredSecurityBuilder.doBuild(AbstractConfiguredSecurityBuilder.java:350) ~[spring-security-config-6.4.9.jar:6.4.9]
+	at org.springframework.security.config.annotation.AbstractSecurityBuilder.build(AbstractSecurityBuilder.java:38) ~[spring-security-config-6.4.9.jar:6.4.9]
+	at org.springframework.security.oauth2.server.authorization.config.annotation.web.configuration.OAuth2AuthorizationServerConfiguration.authorizationServerSecurityFilterChain(OAuth2AuthorizationServerConfiguration.java:65) ~[spring-security-oauth2-authorization-server-1.4.5.jar:1.4.5]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:172) ~[spring-beans-6.2.10.jar:6.2.10]
+	... 24 common frames omitted
+Caused by: org.springframework.util.PlaceholderResolutionException: Could not resolve placeholder 'app.keystore.path' in value "${app.keystore.path}"
+	at org.springframework.util.PlaceholderResolutionException.withValue(PlaceholderResolutionException.java:81) ~[spring-core-6.2.10.jar:6.2.10]
+	at org.springframework.util.PlaceholderParser$ParsedValue.resolve(PlaceholderParser.java:423) ~[spring-core-6.2.10.jar:6.2.10]
+	at org.springframework.util.PlaceholderParser.replacePlaceholders(PlaceholderParser.java:128) ~[spring-core-6.2.10.jar:6.2.10]
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:118) ~[spring-core-6.2.10.jar:6.2.10]
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:114) ~[spring-core-6.2.10.jar:6.2.10]
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:293) ~[spring-core-6.2.10.jar:6.2.10]
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:264) ~[spring-core-6.2.10.jar:6.2.10]
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:186) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:971) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1657) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1635) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1375) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1205) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.10.jar:6.2.10]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.10.jar:6.2.10]
+	... 47 common frames omitted
+

@@ -1,0 +1,83 @@
+<!-- Navbar superior -->
+<!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">
+      <i class="fas fa-chart-line me-2"></i>Panel de Control
+    </span>
+  </div>
+</nav>-->
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+    
+    <!-- Título -->
+    <span class="navbar-brand mb-0 h1">
+      <i class="fas fa-chart-line me-2"></i>Panel de Control
+    </span>
+
+    <!-- Bienvenida al usuario -->
+    <div class="text-end text-white me-3">
+      <div class="small text-white">Admin</div> <!-- Aquí el cambio -->
+      <div class="fw-semibold">Bienvenido, {{ nombreUsuario }}</div>
+    </div>
+
+  </div>
+</nav>
+
+
+<!-- Contenedor principal con sidebar -->
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar -->
+    <nav class="col-md-2 bg-dark text-white d-flex flex-column p-3 min-vh-100">
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item mb-2">
+          <a class="nav-link text-white" routerLink="/home/inicio" routerLinkActive="active">
+            <i class="fas fa-home me-2"></i>Inicio
+          </a>
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link text-white" routerLink="/home/reservas" routerLinkActive="active">
+            <i class="fas fa-calendar-check me-2"></i>Reservas
+          </a>
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link text-white" routerLink="/home/listar-usuarios" routerLinkActive="active">
+            <i class="fas fa-users me-2"></i>Usuarios
+          </a>
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link text-white" routerLink="/home/mesas" routerLinkActive="active">
+            <i class="fas fa-chair me-2"></i>Mesas
+          </a>
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link text-white" routerLink="/home/estado-mesa" routerLinkActive="active">
+            <i class="fas fa-taxi me-2"></i>Estado Mesa
+          </a>
+        </li>
+        <li class="nav-item mb-2">
+          <a class="nav-link text-white" routerLink="/home/transportes" routerLinkActive="active">
+            <i class="fas fa-taxi me-2"></i>Transporte
+          </a>
+        </li>
+        
+      </ul>
+      <hr class="text-secondary" />
+
+      <div class="mt-auto">
+        <a class="nav-link text-danger" (click)="logout()">
+          <i class="fas fa-sign-out-alt me-2"></i>Cerrar Sesión
+        </a>
+      </div>
+    </nav>
+
+    <!-- Contenido dinámico -->
+    <main class="col-md-10 p-4">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>
+

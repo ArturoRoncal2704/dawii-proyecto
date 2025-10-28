@@ -1,0 +1,34 @@
+<div class="container mt-4">
+  <h3 class="mb-3 text-center">Listado de Transportes</h3>
+
+  <table class="table table-striped table-bordered" *ngIf="transportes.length > 0">
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Dirección</th>
+        <th>Pasajeros</th>
+        <th>ID Reserva</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let t of transportes">
+        <td>{{ t.idTransporte }}</td>
+        <td>{{ t.direccion }}</td>
+        <td>{{ t.numeroPasajeros }}</td>
+        <td>{{ t.idReserva }}</td>
+        <td>
+          <a [routerLink]="['/home/actualizar-transporte', t.idTransporte]" class="btn btn-sm btn-outline-primary me-2">
+            <i class="fas fa-edit"></i> Editar
+          </a>
+          <button (click)="eliminar(t.idTransporte!)" class="btn btn-sm btn-outline-danger">
+            <i class="fas fa-trash"></i> Eliminar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+  <div *ngIf="!error && transportes.length === 0" class="alert alert-warning">No hay transportes registrados.</div>
+</div>
