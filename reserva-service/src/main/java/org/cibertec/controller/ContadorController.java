@@ -3,9 +3,9 @@ package org.cibertec.controller;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.cibertec.service.MesaService;
+import org.cibertec.client.MesaFeignClient;
+import org.cibertec.client.UsuarioFeignClient;
 import org.cibertec.service.ReservaService;
-import org.cibertec.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -23,18 +23,18 @@ public class ContadorController {
 	@Autowired
     private ReservaService reservaService;
 
-    @Autowired
-    private UsuarioService usuarioService;
+	@Autowired
+    private UsuarioFeignClient usuarioClient;
 
-    @Autowired
-    private MesaService mesaService;
+	@Autowired
+    private MesaFeignClient mesaClient;
     
     @GetMapping("/totales")
     public ResponseEntity<Map<String, Long>> obtenerTotales() {
         Map<String, Long> datos = new HashMap<>();
         datos.put("reservas", reservaService.contarReservas());
-        datos.put("usuarios", usuarioService.contarUsuarios());
-        datos.put("mesasDisponibles", mesaService.contarMesasDisponibles());
+        datos.put("usuarios", usuarioClient.contarUsuarios());
+        datos.put("mesasDisponibles", mesaClient.contarMesasDisponibles());
 
         return ResponseEntity.ok(datos);
     }

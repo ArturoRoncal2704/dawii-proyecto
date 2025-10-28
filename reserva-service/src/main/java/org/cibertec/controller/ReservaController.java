@@ -2,6 +2,8 @@ package org.cibertec.controller;
 
 import java.util.List;
 
+import org.cibertec.entity.Reserva;
+import org.cibertec.service.ReservaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
@@ -16,8 +18,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cibertec.model.Reserva;
-import com.cibertec.service.ReservaService;
+
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
@@ -110,7 +111,7 @@ public class ReservaController {
 	        return ResponseEntity.noContent().build();
 
 	    } catch (DataIntegrityViolationException e) {
-	        return ResponseEntity.status(HttpStatus.CONFLICT)  // Código 409
+	        return ResponseEntity.status(HttpStatus.CONFLICT)
 	                .body("No se puede eliminar la reserva porque tiene transportes asociados.Primero elimine el transporte");
 	    } catch (Exception e) {
 	        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
@@ -118,7 +119,6 @@ public class ReservaController {
 	    }
 	}
 
-	// Envio a RabbitMQ
 	@PostMapping("/enviar-todas")
 	public ResponseEntity<String> enviarTodasLasReservas() {
 		reservaService.enviarTodasLasReservas();

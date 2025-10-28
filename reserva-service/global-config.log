@@ -1,0 +1,258 @@
+2025-10-28T15:39:33.794-05:00  INFO 19640 --- [global-config] [restartedMain] org.cibertec.ReservaServiceApplication   : Starting ReservaServiceApplication using Java 21.0.8 with PID 19640 (C:\Users\ronca\OneDrive\Escritorio\Dev\DAW2\reserva-service\target\classes started by Arturo in C:\Users\ronca\OneDrive\Escritorio\Dev\DAW2\reserva-service)
+2025-10-28T15:39:33.798-05:00  INFO 19640 --- [global-config] [restartedMain] org.cibertec.ReservaServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-10-28T15:39:33.877-05:00  INFO 19640 --- [global-config] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2025-10-28T15:39:33.878-05:00  INFO 19640 --- [global-config] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=reserva-service, profiles=[default], label=null, version=null, state=null
+2025-10-28T15:39:33.878-05:00  INFO 19640 --- [global-config] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2025-10-28T15:39:33.879-05:00  INFO 19640 --- [global-config] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=global-config, profiles=[default], label=null, version=null, state=null
+2025-10-28T15:39:33.882-05:00  INFO 19640 --- [global-config] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-10-28T15:39:33.883-05:00  INFO 19640 --- [global-config] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-10-28T15:39:35.402-05:00  INFO 19640 --- [global-config] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-28T15:39:35.649-05:00  INFO 19640 --- [global-config] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 230 ms. Found 1 JPA repository interface.
+2025-10-28T15:39:36.125-05:00  INFO 19640 --- [global-config] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=b7cce170-4e06-3116-ac54-014ce6d8920b
+2025-10-28T15:39:37.185-05:00  INFO 19640 --- [global-config] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-28T15:39:37.223-05:00  INFO 19640 --- [global-config] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-28T15:39:37.224-05:00  INFO 19640 --- [global-config] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-28T15:39:37.350-05:00  INFO 19640 --- [global-config] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-28T15:39:37.351-05:00  INFO 19640 --- [global-config] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3466 ms
+2025-10-28T15:39:37.660-05:00  INFO 19640 --- [global-config] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-28T15:39:38.376-05:00  INFO 19640 --- [global-config] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@424dd1db
+2025-10-28T15:39:38.382-05:00  INFO 19640 --- [global-config] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-28T15:39:38.512-05:00  INFO 19640 --- [global-config] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-28T15:39:38.664-05:00  INFO 19640 --- [global-config] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-10-28T15:39:38.748-05:00  INFO 19640 --- [global-config] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-28T15:39:39.323-05:00  INFO 19640 --- [global-config] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-28T15:39:39.529-05:00  INFO 19640 --- [global-config] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.34
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-28T15:39:41.507-05:00  INFO 19640 --- [global-config] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-28T15:39:41.514-05:00  INFO 19640 --- [global-config] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-28T15:39:42.046-05:00  WARN 19640 --- [global-config] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-28T15:39:42.134-05:00  WARN 19640 --- [global-config] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-10-28T15:39:42.292-05:00  INFO 19640 --- [global-config] [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'mesa-service' URL not provided. Will try picking an instance via load-balancing.
+2025-10-28T15:39:42.612-05:00  INFO 19640 --- [global-config] [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'usuario-service' URL not provided. Will try picking an instance via load-balancing.
+2025-10-28T15:39:43.585-05:00  INFO 19640 --- [global-config] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-10-28T15:39:43.642-05:00  WARN 19640 --- [global-config] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-10-28T15:39:43.748-05:00  INFO 19640 --- [global-config] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-10-28T15:39:43.795-05:00  INFO 19640 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-10-28T15:39:43.801-05:00  INFO 19640 --- [global-config] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-28T15:39:43.821-05:00  INFO 19640 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-10-28T15:39:43.822-05:00  INFO 19640 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-10-28T15:39:43.823-05:00  INFO 19640 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-10-28T15:39:43.823-05:00  INFO 19640 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-10-28T15:39:43.823-05:00  INFO 19640 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-10-28T15:39:43.823-05:00  INFO 19640 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-10-28T15:39:43.823-05:00  INFO 19640 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-10-28T15:39:44.177-05:00  INFO 19640 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-10-28T15:39:44.180-05:00  INFO 19640 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-10-28T15:39:44.183-05:00  INFO 19640 --- [global-config] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-10-28T15:39:44.186-05:00  INFO 19640 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1761683984185 with initial instances count: 2
+2025-10-28T15:39:44.193-05:00  INFO 19640 --- [global-config] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application GLOBAL-CONFIG with eureka with status UP
+2025-10-28T15:39:44.194-05:00  INFO 19640 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1761683984194, current=UP, previous=STARTING]
+2025-10-28T15:39:44.197-05:00  INFO 19640 --- [global-config] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GLOBAL-CONFIG/host.docker.internal:global-config: registering service...
+2025-10-28T15:39:44.210-05:00  INFO 19640 --- [global-config] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application GLOBAL-CONFIG with eureka with status DOWN
+2025-10-28T15:39:44.210-05:00  INFO 19640 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1761683984210, current=DOWN, previous=UP]
+2025-10-28T15:39:44.212-05:00  WARN 19640 --- [global-config] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2025-10-28T15:39:44.219-05:00  INFO 19640 --- [global-config] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-28T15:39:44.224-05:00  INFO 19640 --- [global-config] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-28T15:39:44.240-05:00  INFO 19640 --- [global-config] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-28T15:39:44.240-05:00  INFO 19640 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2025-10-28T15:39:44.263-05:00  INFO 19640 --- [global-config] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GLOBAL-CONFIG/host.docker.internal:global-config - registration status: 204
+2025-10-28T15:39:44.264-05:00  INFO 19640 --- [global-config] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GLOBAL-CONFIG/host.docker.internal:global-config: registering service...
+2025-10-28T15:39:44.269-05:00  INFO 19640 --- [global-config] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GLOBAL-CONFIG/host.docker.internal:global-config - registration status: 204
+2025-10-28T15:39:44.270-05:00  INFO 19640 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2025-10-28T15:39:44.277-05:00  INFO 19640 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GLOBAL-CONFIG/host.docker.internal:global-config - deregister  status: 200
+2025-10-28T15:39:44.278-05:00  INFO 19640 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2025-10-28T15:39:44.299-05:00  INFO 19640 --- [global-config] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-10-28T15:39:44.337-05:00 ERROR 19640 --- [global-config] [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2025-10-28T15:46:58.002-05:00  INFO 33588 --- [global-config] [restartedMain] org.cibertec.ReservaServiceApplication   : Starting ReservaServiceApplication using Java 21.0.8 with PID 33588 (C:\Users\ronca\OneDrive\Escritorio\Dev\DAW2\reserva-service\target\classes started by Arturo in C:\Users\ronca\OneDrive\Escritorio\Dev\DAW2\reserva-service)
+2025-10-28T15:46:58.006-05:00  INFO 33588 --- [global-config] [restartedMain] org.cibertec.ReservaServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-10-28T15:46:58.092-05:00  INFO 33588 --- [global-config] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2025-10-28T15:46:58.092-05:00  INFO 33588 --- [global-config] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=reserva-service, profiles=[default], label=null, version=null, state=null
+2025-10-28T15:46:58.093-05:00  INFO 33588 --- [global-config] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2025-10-28T15:46:58.093-05:00  INFO 33588 --- [global-config] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=global-config, profiles=[default], label=null, version=null, state=null
+2025-10-28T15:46:58.097-05:00  INFO 33588 --- [global-config] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-10-28T15:46:58.097-05:00  INFO 33588 --- [global-config] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-10-28T15:46:59.683-05:00  INFO 33588 --- [global-config] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-28T15:46:59.965-05:00  INFO 33588 --- [global-config] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 263 ms. Found 1 JPA repository interface.
+2025-10-28T15:47:00.552-05:00  INFO 33588 --- [global-config] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=b7cce170-4e06-3116-ac54-014ce6d8920b
+2025-10-28T15:47:01.457-05:00  INFO 33588 --- [global-config] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-28T15:47:01.481-05:00  INFO 33588 --- [global-config] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-28T15:47:01.482-05:00  INFO 33588 --- [global-config] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-28T15:47:01.592-05:00  INFO 33588 --- [global-config] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-28T15:47:01.593-05:00  INFO 33588 --- [global-config] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3494 ms
+2025-10-28T15:47:01.844-05:00  INFO 33588 --- [global-config] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-28T15:47:02.429-05:00  INFO 33588 --- [global-config] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@544ee37d
+2025-10-28T15:47:02.432-05:00  INFO 33588 --- [global-config] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-28T15:47:02.537-05:00  INFO 33588 --- [global-config] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-28T15:47:02.656-05:00  INFO 33588 --- [global-config] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-10-28T15:47:02.733-05:00  INFO 33588 --- [global-config] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-28T15:47:03.356-05:00  INFO 33588 --- [global-config] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-28T15:47:03.555-05:00  INFO 33588 --- [global-config] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.34
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-28T15:47:05.397-05:00  INFO 33588 --- [global-config] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-28T15:47:05.406-05:00  INFO 33588 --- [global-config] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-28T15:47:05.956-05:00  WARN 33588 --- [global-config] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-28T15:47:06.025-05:00  INFO 33588 --- [global-config] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-10-28T15:47:06.175-05:00  INFO 33588 --- [global-config] [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'mesa-service' URL not provided. Will try picking an instance via load-balancing.
+2025-10-28T15:47:06.483-05:00  INFO 33588 --- [global-config] [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'usuario-service' URL not provided. Will try picking an instance via load-balancing.
+2025-10-28T15:47:07.235-05:00  INFO 33588 --- [global-config] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-10-28T15:47:07.283-05:00  WARN 33588 --- [global-config] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-10-28T15:47:07.374-05:00  INFO 33588 --- [global-config] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-10-28T15:47:07.411-05:00  INFO 33588 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-10-28T15:47:07.417-05:00  INFO 33588 --- [global-config] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-28T15:47:07.435-05:00  INFO 33588 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-10-28T15:47:07.436-05:00  INFO 33588 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-10-28T15:47:07.436-05:00  INFO 33588 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-10-28T15:47:07.436-05:00  INFO 33588 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-10-28T15:47:07.436-05:00  INFO 33588 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-10-28T15:47:07.436-05:00  INFO 33588 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-10-28T15:47:07.436-05:00  INFO 33588 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-10-28T15:47:07.778-05:00  INFO 33588 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-10-28T15:47:07.781-05:00  INFO 33588 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-10-28T15:47:07.784-05:00  INFO 33588 --- [global-config] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-10-28T15:47:07.787-05:00  INFO 33588 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1761684427786 with initial instances count: 1
+2025-10-28T15:47:07.792-05:00  INFO 33588 --- [global-config] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application GLOBAL-CONFIG with eureka with status UP
+2025-10-28T15:47:07.793-05:00  INFO 33588 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1761684427793, current=UP, previous=STARTING]
+2025-10-28T15:47:07.796-05:00  INFO 33588 --- [global-config] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GLOBAL-CONFIG/host.docker.internal:global-config: registering service...
+2025-10-28T15:47:07.810-05:00  INFO 33588 --- [global-config] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application GLOBAL-CONFIG with eureka with status DOWN
+2025-10-28T15:47:07.810-05:00  INFO 33588 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1761684427810, current=DOWN, previous=UP]
+2025-10-28T15:47:07.812-05:00  WARN 33588 --- [global-config] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2025-10-28T15:47:07.819-05:00  INFO 33588 --- [global-config] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-28T15:47:07.825-05:00  INFO 33588 --- [global-config] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-28T15:47:07.839-05:00  INFO 33588 --- [global-config] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-28T15:47:07.840-05:00  INFO 33588 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2025-10-28T15:47:07.859-05:00  INFO 33588 --- [global-config] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GLOBAL-CONFIG/host.docker.internal:global-config - registration status: 204
+2025-10-28T15:47:07.859-05:00  INFO 33588 --- [global-config] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GLOBAL-CONFIG/host.docker.internal:global-config: registering service...
+2025-10-28T15:47:07.865-05:00  INFO 33588 --- [global-config] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GLOBAL-CONFIG/host.docker.internal:global-config - registration status: 204
+2025-10-28T15:47:07.866-05:00  INFO 33588 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2025-10-28T15:47:07.884-05:00  INFO 33588 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GLOBAL-CONFIG/host.docker.internal:global-config - deregister  status: 200
+2025-10-28T15:47:07.885-05:00  INFO 33588 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2025-10-28T15:47:07.904-05:00  INFO 33588 --- [global-config] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-10-28T15:47:07.947-05:00 ERROR 33588 --- [global-config] [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2025-10-28T15:49:01.669-05:00  INFO 9144 --- [global-config] [restartedMain] org.cibertec.ReservaServiceApplication   : Starting ReservaServiceApplication using Java 21.0.8 with PID 9144 (C:\Users\ronca\OneDrive\Escritorio\Dev\DAW2\reserva-service\target\classes started by Arturo in C:\Users\ronca\OneDrive\Escritorio\Dev\DAW2\reserva-service)
+2025-10-28T15:49:01.673-05:00  INFO 9144 --- [global-config] [restartedMain] org.cibertec.ReservaServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-10-28T15:49:01.794-05:00  INFO 9144 --- [global-config] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2025-10-28T15:49:01.794-05:00  INFO 9144 --- [global-config] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=reserva-service, profiles=[default], label=null, version=null, state=null
+2025-10-28T15:49:01.795-05:00  INFO 9144 --- [global-config] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2025-10-28T15:49:01.795-05:00  INFO 9144 --- [global-config] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=global-config, profiles=[default], label=null, version=null, state=null
+2025-10-28T15:49:01.799-05:00  INFO 9144 --- [global-config] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-10-28T15:49:01.800-05:00  INFO 9144 --- [global-config] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-10-28T15:49:03.053-05:00  INFO 9144 --- [global-config] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-28T15:49:03.288-05:00  INFO 9144 --- [global-config] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 220 ms. Found 1 JPA repository interface.
+2025-10-28T15:49:03.731-05:00  INFO 9144 --- [global-config] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=b7cce170-4e06-3116-ac54-014ce6d8920b
+2025-10-28T15:49:04.428-05:00  INFO 9144 --- [global-config] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-28T15:49:04.451-05:00  INFO 9144 --- [global-config] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-28T15:49:04.452-05:00  INFO 9144 --- [global-config] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-28T15:49:04.545-05:00  INFO 9144 --- [global-config] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-28T15:49:04.546-05:00  INFO 9144 --- [global-config] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2745 ms
+2025-10-28T15:49:04.751-05:00  INFO 9144 --- [global-config] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-28T15:49:05.242-05:00  INFO 9144 --- [global-config] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@544ee37d
+2025-10-28T15:49:05.247-05:00  INFO 9144 --- [global-config] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-28T15:49:05.338-05:00  INFO 9144 --- [global-config] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-28T15:49:05.442-05:00  INFO 9144 --- [global-config] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-10-28T15:49:05.514-05:00  INFO 9144 --- [global-config] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-28T15:49:06.021-05:00  INFO 9144 --- [global-config] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-28T15:49:06.193-05:00  INFO 9144 --- [global-config] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.34
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-28T15:49:07.718-05:00  INFO 9144 --- [global-config] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-28T15:49:07.724-05:00  INFO 9144 --- [global-config] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-28T15:49:08.162-05:00  WARN 9144 --- [global-config] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-28T15:49:08.221-05:00  WARN 9144 --- [global-config] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-10-28T15:49:08.321-05:00  INFO 9144 --- [global-config] [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'mesa-service' URL not provided. Will try picking an instance via load-balancing.
+2025-10-28T15:49:08.569-05:00  INFO 9144 --- [global-config] [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'usuario-service' URL not provided. Will try picking an instance via load-balancing.
+2025-10-28T15:49:09.202-05:00  INFO 9144 --- [global-config] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-10-28T15:49:09.245-05:00  WARN 9144 --- [global-config] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-10-28T15:49:09.330-05:00  INFO 9144 --- [global-config] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-10-28T15:49:09.365-05:00  INFO 9144 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-10-28T15:49:09.372-05:00  INFO 9144 --- [global-config] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-28T15:49:09.388-05:00  INFO 9144 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-10-28T15:49:09.388-05:00  INFO 9144 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-10-28T15:49:09.388-05:00  INFO 9144 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-10-28T15:49:09.388-05:00  INFO 9144 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-10-28T15:49:09.388-05:00  INFO 9144 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-10-28T15:49:09.388-05:00  INFO 9144 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-10-28T15:49:09.389-05:00  INFO 9144 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-10-28T15:49:09.701-05:00  INFO 9144 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-10-28T15:49:09.704-05:00  INFO 9144 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-10-28T15:49:09.708-05:00  INFO 9144 --- [global-config] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-10-28T15:49:09.710-05:00  INFO 9144 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1761684549709 with initial instances count: 3
+2025-10-28T15:49:09.715-05:00  INFO 9144 --- [global-config] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application GLOBAL-CONFIG with eureka with status UP
+2025-10-28T15:49:09.716-05:00  INFO 9144 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1761684549716, current=UP, previous=STARTING]
+2025-10-28T15:49:09.718-05:00  INFO 9144 --- [global-config] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GLOBAL-CONFIG/host.docker.internal:global-config: registering service...
+2025-10-28T15:49:09.729-05:00  INFO 9144 --- [global-config] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application GLOBAL-CONFIG with eureka with status DOWN
+2025-10-28T15:49:09.729-05:00  INFO 9144 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1761684549729, current=DOWN, previous=UP]
+2025-10-28T15:49:09.730-05:00  WARN 9144 --- [global-config] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2025-10-28T15:49:09.737-05:00  INFO 9144 --- [global-config] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-28T15:49:09.743-05:00  INFO 9144 --- [global-config] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-28T15:49:09.755-05:00  INFO 9144 --- [global-config] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-28T15:49:09.756-05:00  INFO 9144 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2025-10-28T15:49:09.782-05:00  INFO 9144 --- [global-config] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GLOBAL-CONFIG/host.docker.internal:global-config - registration status: 204
+2025-10-28T15:49:09.783-05:00  INFO 9144 --- [global-config] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GLOBAL-CONFIG/host.docker.internal:global-config: registering service...
+2025-10-28T15:49:09.790-05:00  INFO 9144 --- [global-config] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GLOBAL-CONFIG/host.docker.internal:global-config - registration status: 204
+2025-10-28T15:49:09.791-05:00  INFO 9144 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2025-10-28T15:49:09.808-05:00  INFO 9144 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GLOBAL-CONFIG/host.docker.internal:global-config - deregister  status: 200
+2025-10-28T15:49:09.809-05:00  INFO 9144 --- [global-config] [restartedMain] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2025-10-28T15:49:09.832-05:00  INFO 9144 --- [global-config] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-10-28T15:49:09.864-05:00 ERROR 9144 --- [global-config] [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+

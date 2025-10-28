@@ -1,0 +1,177 @@
+2025-10-28T15:37:52.219-05:00  INFO 13820 --- [global-config] [restartedMain] org.cibertec.UserServiceApplication      : Starting UserServiceApplication using Java 21.0.8 with PID 13820 (C:\Users\ronca\OneDrive\Escritorio\Dev\DAW2\user-service\target\classes started by Arturo in C:\Users\ronca\OneDrive\Escritorio\Dev\DAW2\user-service)
+2025-10-28T15:37:52.223-05:00  INFO 13820 --- [global-config] [restartedMain] org.cibertec.UserServiceApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-10-28T15:37:52.293-05:00  INFO 13820 --- [global-config] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2025-10-28T15:37:52.294-05:00  INFO 13820 --- [global-config] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=user-service, profiles=[default], label=null, version=null, state=null
+2025-10-28T15:37:52.294-05:00  INFO 13820 --- [global-config] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2025-10-28T15:37:52.295-05:00  INFO 13820 --- [global-config] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=global-config, profiles=[default], label=null, version=null, state=null
+2025-10-28T15:37:52.299-05:00  INFO 13820 --- [global-config] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-10-28T15:37:52.299-05:00  INFO 13820 --- [global-config] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-10-28T15:37:54.185-05:00  INFO 13820 --- [global-config] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-28T15:37:54.441-05:00  INFO 13820 --- [global-config] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 239 ms. Found 2 JPA repository interfaces.
+2025-10-28T15:37:54.880-05:00  INFO 13820 --- [global-config] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=ddb0df9f-d029-312c-b4a6-809a01d96044
+2025-10-28T15:37:55.669-05:00  INFO 13820 --- [global-config] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-28T15:37:55.692-05:00  INFO 13820 --- [global-config] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-28T15:37:55.692-05:00  INFO 13820 --- [global-config] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-10-28T15:37:55.785-05:00  INFO 13820 --- [global-config] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-28T15:37:55.786-05:00  INFO 13820 --- [global-config] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3486 ms
+2025-10-28T15:37:56.214-05:00  INFO 13820 --- [global-config] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-28T15:37:56.707-05:00  INFO 13820 --- [global-config] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@52e619c8
+2025-10-28T15:37:56.711-05:00  INFO 13820 --- [global-config] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-28T15:37:56.802-05:00  INFO 13820 --- [global-config] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-28T15:37:56.934-05:00  INFO 13820 --- [global-config] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-10-28T15:37:57.013-05:00  INFO 13820 --- [global-config] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-28T15:37:57.598-05:00  INFO 13820 --- [global-config] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-28T15:37:57.793-05:00  INFO 13820 --- [global-config] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.34
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-28T15:37:59.612-05:00  INFO 13820 --- [global-config] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-28T15:37:59.617-05:00  INFO 13820 --- [global-config] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-28T15:38:00.156-05:00  WARN 13820 --- [global-config] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'usuarioController': Unsatisfied dependency expressed through field 'usuarioService': Error creating bean with name 'usuarioService': Unsatisfied dependency expressed through field 'encoder': No qualifying bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2025-10-28T15:38:00.156-05:00  INFO 13820 --- [global-config] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-28T15:38:00.162-05:00  INFO 13820 --- [global-config] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-28T15:38:00.172-05:00  INFO 13820 --- [global-config] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-28T15:38:00.176-05:00  INFO 13820 --- [global-config] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-10-28T15:38:00.200-05:00  INFO 13820 --- [global-config] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-10-28T15:38:00.244-05:00 ERROR 13820 --- [global-config] [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field encoder in org.cibertec.service.UsuarioService required a bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' in your configuration.
+
+2025-10-28T15:39:37.276-05:00  INFO 18452 --- [global-config] [restartedMain] org.cibertec.UserServiceApplication      : Starting UserServiceApplication using Java 21.0.8 with PID 18452 (C:\Users\ronca\OneDrive\Escritorio\Dev\DAW2\user-service\target\classes started by Arturo in C:\Users\ronca\OneDrive\Escritorio\Dev\DAW2\user-service)
+2025-10-28T15:39:37.280-05:00  INFO 18452 --- [global-config] [restartedMain] org.cibertec.UserServiceApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-10-28T15:39:37.365-05:00  INFO 18452 --- [global-config] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2025-10-28T15:39:37.366-05:00  INFO 18452 --- [global-config] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=user-service, profiles=[default], label=null, version=null, state=null
+2025-10-28T15:39:37.366-05:00  INFO 18452 --- [global-config] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2025-10-28T15:39:37.367-05:00  INFO 18452 --- [global-config] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=global-config, profiles=[default], label=null, version=null, state=null
+2025-10-28T15:39:37.372-05:00  INFO 18452 --- [global-config] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-10-28T15:39:37.372-05:00  INFO 18452 --- [global-config] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-10-28T15:39:39.603-05:00  INFO 18452 --- [global-config] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-28T15:39:39.899-05:00  INFO 18452 --- [global-config] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 277 ms. Found 2 JPA repository interfaces.
+2025-10-28T15:39:40.463-05:00  INFO 18452 --- [global-config] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=ddb0df9f-d029-312c-b4a6-809a01d96044
+2025-10-28T15:39:41.340-05:00  INFO 18452 --- [global-config] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-28T15:39:41.363-05:00  INFO 18452 --- [global-config] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-28T15:39:41.363-05:00  INFO 18452 --- [global-config] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-10-28T15:39:41.476-05:00  INFO 18452 --- [global-config] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-28T15:39:41.477-05:00  INFO 18452 --- [global-config] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4104 ms
+2025-10-28T15:39:41.954-05:00  INFO 18452 --- [global-config] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-28T15:39:42.630-05:00  INFO 18452 --- [global-config] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5b7a89c9
+2025-10-28T15:39:42.634-05:00  INFO 18452 --- [global-config] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-28T15:39:42.735-05:00  INFO 18452 --- [global-config] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-28T15:39:42.916-05:00  INFO 18452 --- [global-config] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-10-28T15:39:43.034-05:00  INFO 18452 --- [global-config] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-28T15:39:43.819-05:00  INFO 18452 --- [global-config] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-28T15:39:44.032-05:00  INFO 18452 --- [global-config] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.34
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-28T15:39:45.818-05:00  INFO 18452 --- [global-config] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-28T15:39:45.825-05:00  INFO 18452 --- [global-config] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-28T15:39:46.348-05:00  WARN 18452 --- [global-config] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'usuarioController': Unsatisfied dependency expressed through field 'usuarioService': Error creating bean with name 'usuarioService': Unsatisfied dependency expressed through field 'encoder': No qualifying bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2025-10-28T15:39:46.349-05:00  INFO 18452 --- [global-config] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-28T15:39:46.355-05:00  INFO 18452 --- [global-config] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-28T15:39:46.366-05:00  INFO 18452 --- [global-config] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-28T15:39:46.370-05:00  INFO 18452 --- [global-config] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-10-28T15:39:46.393-05:00  INFO 18452 --- [global-config] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-10-28T15:39:46.436-05:00 ERROR 18452 --- [global-config] [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field encoder in org.cibertec.service.UsuarioService required a bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' in your configuration.
+
+2025-10-28T15:47:01.508-05:00  INFO 28544 --- [global-config] [restartedMain] org.cibertec.UserServiceApplication      : Starting UserServiceApplication using Java 21.0.8 with PID 28544 (C:\Users\ronca\OneDrive\Escritorio\Dev\DAW2\user-service\target\classes started by Arturo in C:\Users\ronca\OneDrive\Escritorio\Dev\DAW2\user-service)
+2025-10-28T15:47:01.511-05:00  INFO 28544 --- [global-config] [restartedMain] org.cibertec.UserServiceApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-10-28T15:47:01.594-05:00  INFO 28544 --- [global-config] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2025-10-28T15:47:01.594-05:00  INFO 28544 --- [global-config] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=user-service, profiles=[default], label=null, version=null, state=null
+2025-10-28T15:47:01.595-05:00  INFO 28544 --- [global-config] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2025-10-28T15:47:01.595-05:00  INFO 28544 --- [global-config] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=global-config, profiles=[default], label=null, version=null, state=null
+2025-10-28T15:47:01.598-05:00  INFO 28544 --- [global-config] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-10-28T15:47:01.598-05:00  INFO 28544 --- [global-config] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-10-28T15:47:03.684-05:00  INFO 28544 --- [global-config] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-28T15:47:03.942-05:00  INFO 28544 --- [global-config] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 239 ms. Found 2 JPA repository interfaces.
+2025-10-28T15:47:04.444-05:00  INFO 28544 --- [global-config] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=ddb0df9f-d029-312c-b4a6-809a01d96044
+2025-10-28T15:47:05.309-05:00  INFO 28544 --- [global-config] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-28T15:47:05.341-05:00  INFO 28544 --- [global-config] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-28T15:47:05.342-05:00  INFO 28544 --- [global-config] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.44]
+2025-10-28T15:47:05.458-05:00  INFO 28544 --- [global-config] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-28T15:47:05.459-05:00  INFO 28544 --- [global-config] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3860 ms
+2025-10-28T15:47:05.963-05:00  INFO 28544 --- [global-config] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-28T15:47:06.582-05:00  INFO 28544 --- [global-config] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@41ba5b5e
+2025-10-28T15:47:06.593-05:00  INFO 28544 --- [global-config] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-28T15:47:06.686-05:00  INFO 28544 --- [global-config] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-28T15:47:06.820-05:00  INFO 28544 --- [global-config] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.26.Final
+2025-10-28T15:47:06.902-05:00  INFO 28544 --- [global-config] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-28T15:47:07.557-05:00  INFO 28544 --- [global-config] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-28T15:47:07.751-05:00  INFO 28544 --- [global-config] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.34
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-28T15:47:09.529-05:00  INFO 28544 --- [global-config] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-28T15:47:09.540-05:00  INFO 28544 --- [global-config] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-28T15:47:10.092-05:00  WARN 28544 --- [global-config] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'usuarioController': Unsatisfied dependency expressed through field 'usuarioService': Error creating bean with name 'usuarioService': Unsatisfied dependency expressed through field 'encoder': No qualifying bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2025-10-28T15:47:10.092-05:00  INFO 28544 --- [global-config] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-28T15:47:10.099-05:00  INFO 28544 --- [global-config] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-28T15:47:10.110-05:00  INFO 28544 --- [global-config] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-28T15:47:10.114-05:00  INFO 28544 --- [global-config] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-10-28T15:47:10.136-05:00  INFO 28544 --- [global-config] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-10-28T15:47:10.175-05:00 ERROR 28544 --- [global-config] [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field encoder in org.cibertec.service.UsuarioService required a bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder' in your configuration.
+
