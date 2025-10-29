@@ -1,6 +1,5 @@
 package org.cibertec.controller;
 
-import org.cibertec.dto.CustomUserDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -16,7 +15,8 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/oauth2")
+@RequestMapping("/auth")
+@CrossOrigin(origins = "*")
 public class AuthController {
 
     @Autowired
@@ -25,54 +25,42 @@ public class AuthController {
     @Autowired
     private JwtEncoder jwtEncoder;
 
-    @PostMapping("/token")
-    public ResponseEntity<?> login(@RequestParam String username,
-                                    @RequestParam String password) {
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody Map<String, String> credentials) {
         try {
-            System.out.println("=== DEBUG LOGIN ===");
-            System.out.println("Username recibido: " + username);
-            System.out.println("Password recibido: " + password);
-            
+            String correo = credentials.get("correo");
+            String contrasena = credentials.get("contrasena");
+
             Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(username, password)
+                    new UsernamePasswordAuthenticationToken(correo, contrasena)
             );
-            
-            System.out.println("Autenticación exitosa!");
-            System.out.println("Usuario autenticado: " + authentication.getName());
-            System.out.println("Authorities: " + authentication.getAuthorities());
 
             Instant now = Instant.now();
             long expiry = 3600L;
 
-            JwtClaimsSet.Builder claimsBuilder = JwtClaimsSet.builder()
-                .issuer("http://localhost:8080")
-                .issuedAt(now)
-                .expiresAt(now.plusSeconds(expiry))
-                .subject(authentication.getName())
-                .claim("scope", "api.read api.write")
-                .claim("roles", authentication.getAuthorities().stream()
-                    .map(a -> a.getAuthority())
-                    .collect(Collectors.toList()));
+            JwtClaimsSet claims = JwtClaimsSet.builder()
+                    .issuer("auth-server")
+                    .issuedAt(now)
+                    .expiresAt(now.plusSeconds(expiry))
+                    .subject(authentication.getName())
+                    .claim("roles", authentication.getAuthorities().stream()
+                            .map(a -> a.getAuthority())
+                            .collect(Collectors.toList()))
+                    .build();
 
-            if (authentication.getPrincipal() instanceof CustomUserDetails userDetails) {
-                claimsBuilder.claim("name", userDetails.getName());
-                claimsBuilder.claim("email", userDetails.getEmail());
-            }
-
-            String token = jwtEncoder.encode(JwtEncoderParameters.from(claimsBuilder.build())).getTokenValue();
+            String token = jwtEncoder.encode(JwtEncoderParameters.from(claims)).getTokenValue();
 
             return ResponseEntity.ok(Map.of(
-                "access_token", token,
-                "token_type", "Bearer",
-                "expires_in", expiry
+                    "access_token", token,
+                    "token_type", "Bearer",
+                    "expires_in", expiry
             ));
 
         } catch (Exception e) {
-            System.err.println("=== ERROR EN LOGIN ===");
-            e.printStackTrace();
-            return ResponseEntity.status(401)
-                .body(Map.of("error", "invalid_credentials", 
-                            "error_description", "Usuario o contraseña incorrectos: " + e.getMessage()));
+            return ResponseEntity.status(401).body(Map.of(
+                    "error", "invalid_credentials",
+                    "error_description", "Usuario o contraseña incorrectos"
+            ));
         }
     }
 }
