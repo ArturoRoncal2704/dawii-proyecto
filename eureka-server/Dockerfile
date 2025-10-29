@@ -1,18 +1,31 @@
-# Crear el jar
+# ===============================
+# STAGE 1: Build del JAR
+# ===============================
 FROM maven:3.9.9-eclipse-temurin-21 AS builder
 
+# Carpeta de trabajo
 WORKDIR /workspace
 
-COPY eureka-server ./eureka-server
+# Copiamos las fuentes de las aplicaciones
+COPY src ./src
+COPY pom.xml ./pom.xml
 
-RUN mvn -f eureka-server/pom.xml clean install -DskipTests
+# Compilamos el proyecto (generará el .jar)
+RUN mvn clean install -DskipTests
 
-# Desplegar la aplicación
+# ===============================
+# STAGE 2: Imagen final
+# ===============================
 FROM eclipse-temurin:21-jre
 
+# Carpeta de trabajo
 WORKDIR /app
 
-COPY --from=builder /workspace/eureka-server/target/*.jar eureka-server.jar
+ENV SPRING_PROFILES_ACTIVE=docker
 
-ENTRYPOINT ["java","-jar","eureka-server.jar"]
-# Desplegar la aplicación
+COPY --from=builder /workspace/target/*.jar eureka-server.jar
+
+EXPOSE 8761
+
+# Comando de ejecución
+ENTRYPOINT ["java", "-jar", "eureka-server.jar"]

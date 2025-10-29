@@ -3,16 +3,23 @@ FROM maven:3.9.9-eclipse-temurin-21 AS builder
 
 WORKDIR /workspace
 
-COPY api-gateway ./api-gateway
+COPY src ./src
+COPY pom.xml ./pom.xml
 
-RUN mvn -f api-gateway/pom.xml clean install -DskipTests
+# Compilamos el proyecto (generará el .jar)
+RUN mvn clean install -DskipTests
 
 # Desplegar la aplicación
 FROM eclipse-temurin:21-jre
 
 WORKDIR /app
 
-COPY --from=builder /workspace/api-gateway/target/*.jar api-gateway.jar
+ENV SPRING_PROFILES_ACTIVE=docker
+
+# Copiamos el JAR compilado desde la imagen builder
+COPY --from=builder /workspace/target/*.jar api-gateway.jar
+
+EXPOSE 8080
 
 ENTRYPOINT ["java","-jar","api-gateway.jar"]
 # Desplegar la aplicación
