@@ -6,7 +6,7 @@ import org.cibertec.client.MesaFeignClient;
 import org.cibertec.entity.EstadoMesa;
 import org.cibertec.entity.Mesa;
 import org.cibertec.entity.Reserva;
-import org.cibertec.rabbit.MensajeReserva;
+import org.cibertec.rabbit.ReservaProducer;
 import org.cibertec.repository.ReservaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,15 +16,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class ReservaService {
 	
-	@Autowired
+    @Autowired
     private ReservaRepository repo;
 	
-	
-	@Autowired
+    @Autowired
     private MesaFeignClient mesaClient;
 	
-	@Autowired
-    private MensajeReserva mensajeReserva;
+    @Autowired
+    private ReservaProducer reservaProducer;
 	
 	
     public List<Reserva> listarReserva() {
@@ -35,8 +34,8 @@ public class ReservaService {
     public Reserva guardarReserva(Reserva reserva) {
         Mesa mesa = mesaClient.obtenerMesaPorId(reserva.getMesa().getIdMesa());
         
-        if(mesa == null) {
-        	throw new RuntimeException("Mesa no encontrada");
+        if (mesa == null) {
+            throw new RuntimeException("Mesa no encontrada");
         }
         
         if (!mesa.getEstadoMesa().getIdEstMesa().equals(1)) {
@@ -49,13 +48,13 @@ public class ReservaService {
         EstadoMesa ocupado = new EstadoMesa();
         ocupado.setIdEstMesa(2);
         mesa.setEstadoMesa(ocupado);
-        
         mesaClient.actualizarMesa(mesa.getIdMesa(), mesa);
         
-        return nuevaReserva;
+        reservaProducer.enviarReserva(nuevaReserva);
+        System.out.println("📨 Reserva enviada a RabbitMQ: " + nuevaReserva.getIdReserva());
         
+        return nuevaReserva;
     }
-
 
     public Reserva obtenerReservaPorId(Integer id) {
         return repo.findById(id).orElse(null);
@@ -69,15 +68,11 @@ public class ReservaService {
         return repo.count();
     }
 
-    public void enviarTodasLasReservas() {
+    public void reenviarTodasLasReservas() {
         List<Reserva> reservas = repo.findAll();
         for (Reserva reserva : reservas) {
-            mensajeReserva.enviarReserva(reserva);
+            reservaProducer.enviarReserva(reserva);
         }
+        System.out.println("Todas las reservas reenviadas a RabbitMQ");
     }
-
-    
-    
 }
-
-

@@ -2634,3 +2634,238 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
 
 2025-10-29T03:20:02.536-05:00  INFO 7736 --- [reserva-service] [RMI TCP Connection(58)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2025-10-29T12:51:53.449-05:00  INFO 35720 --- [reserva-service] [restartedMain] org.cibertec.ReservaServiceApplication   : Starting ReservaServiceApplication using Java 21.0.8 with PID 35720 (C:\Users\ronca\OneDrive\Escritorio\Dev\DAW2\reserva-service\target\classes started by Arturo in C:\Users\ronca\OneDrive\Escritorio\Dev\DAW2\reserva-service)
+2025-10-29T12:51:53.455-05:00  INFO 35720 --- [reserva-service] [restartedMain] org.cibertec.ReservaServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-10-29T12:51:53.579-05:00  INFO 35720 --- [reserva-service] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2025-10-29T12:51:53.584-05:00  INFO 35720 --- [reserva-service] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=reserva-service, profiles=[default], label=null, version=null, state=null
+2025-10-29T12:51:53.592-05:00  INFO 35720 --- [reserva-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-10-29T12:51:53.593-05:00  INFO 35720 --- [reserva-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-10-29T12:51:57.005-05:00  INFO 35720 --- [reserva-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-29T12:51:57.525-05:00  INFO 35720 --- [reserva-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 490 ms. Found 1 JPA repository interface.
+2025-10-29T12:51:58.529-05:00  INFO 35720 --- [reserva-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=969c5c92-e76a-349f-bf48-9297470807fd
+2025-10-29T12:51:59.936-05:00  INFO 35720 --- [reserva-service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2025-10-29T12:51:59.969-05:00  INFO 35720 --- [reserva-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-29T12:51:59.969-05:00  INFO 35720 --- [reserva-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-29T12:52:00.102-05:00  INFO 35720 --- [reserva-service] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-29T12:52:00.104-05:00  INFO 35720 --- [reserva-service] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6508 ms
+2025-10-29T12:52:00.757-05:00  INFO 35720 --- [reserva-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-29T12:52:01.589-05:00  INFO 35720 --- [reserva-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@69651d20
+2025-10-29T12:52:01.594-05:00  INFO 35720 --- [reserva-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-29T12:52:01.748-05:00  INFO 35720 --- [reserva-service] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-29T12:52:01.974-05:00  INFO 35720 --- [reserva-service] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-10-29T12:52:02.110-05:00  INFO 35720 --- [reserva-service] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-29T12:52:02.984-05:00  INFO 35720 --- [reserva-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-29T12:52:03.360-05:00  INFO 35720 --- [reserva-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.34
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-29T12:52:06.567-05:00  INFO 35720 --- [reserva-service] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-29T12:52:06.580-05:00  INFO 35720 --- [reserva-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-29T12:52:07.503-05:00  WARN 35720 --- [reserva-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-29T12:52:07.599-05:00  INFO 35720 --- [reserva-service] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-10-29T12:52:07.695-05:00  INFO 35720 --- [reserva-service] [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'mesa-service' URL not provided. Will try picking an instance via load-balancing.
+2025-10-29T12:52:08.099-05:00  INFO 35720 --- [reserva-service] [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'usuario-service' URL not provided. Will try picking an instance via load-balancing.
+2025-10-29T12:52:09.023-05:00  INFO 35720 --- [reserva-service] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 18 endpoints beneath base path '/actuator'
+2025-10-29T12:52:10.016-05:00  INFO 35720 --- [reserva-service] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-10-29T12:52:10.081-05:00  WARN 35720 --- [reserva-service] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-10-29T12:52:10.275-05:00  INFO 35720 --- [reserva-service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 53321 (http) with context path '/'
+2025-10-29T12:52:10.277-05:00  INFO 35720 --- [reserva-service] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 53321
+2025-10-29T12:52:10.286-05:00  INFO 35720 --- [reserva-service] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-10-29T12:52:10.362-05:00  INFO 35720 --- [reserva-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-10-29T12:52:10.370-05:00  INFO 35720 --- [reserva-service] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-29T12:52:10.388-05:00  INFO 35720 --- [reserva-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-10-29T12:52:10.388-05:00  INFO 35720 --- [reserva-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-10-29T12:52:10.389-05:00  INFO 35720 --- [reserva-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-10-29T12:52:10.389-05:00  INFO 35720 --- [reserva-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-10-29T12:52:10.389-05:00  INFO 35720 --- [reserva-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-10-29T12:52:10.389-05:00  INFO 35720 --- [reserva-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-10-29T12:52:10.390-05:00  INFO 35720 --- [reserva-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-10-29T12:52:10.981-05:00  INFO 35720 --- [reserva-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-10-29T12:52:10.984-05:00  INFO 35720 --- [reserva-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-10-29T12:52:10.988-05:00  INFO 35720 --- [reserva-service] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-10-29T12:52:10.989-05:00  INFO 35720 --- [reserva-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1761760330989 with initial instances count: 0
+2025-10-29T12:52:10.996-05:00  INFO 35720 --- [reserva-service] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application RESERVA-SERVICE with eureka with status UP
+2025-10-29T12:52:10.997-05:00  INFO 35720 --- [reserva-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1761760330997, current=UP, previous=STARTING]
+2025-10-29T12:52:11.000-05:00  INFO 35720 --- [reserva-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_RESERVA-SERVICE/reserva-service:4013414f7711d7b634e2c44100d28944: registering service...
+2025-10-29T12:52:11.031-05:00  INFO 35720 --- [reserva-service] [restartedMain] org.cibertec.ReservaServiceApplication   : Started ReservaServiceApplication in 21.202 seconds (process running for 23.146)
+2025-10-29T12:52:11.217-05:00  INFO 35720 --- [reserva-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_RESERVA-SERVICE/reserva-service:4013414f7711d7b634e2c44100d28944 - registration status: 204
+2025-10-29T12:52:11.737-05:00  INFO 35720 --- [reserva-service] [RMI TCP Connection(5)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-29T12:52:11.737-05:00  INFO 35720 --- [reserva-service] [RMI TCP Connection(5)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-29T12:52:11.741-05:00  INFO 35720 --- [reserva-service] [RMI TCP Connection(5)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2025-10-29T12:52:40.998-05:00  INFO 35720 --- [reserva-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-10-29T12:52:40.999-05:00  INFO 35720 --- [reserva-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-10-29T12:52:40.999-05:00  INFO 35720 --- [reserva-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-10-29T12:52:40.999-05:00  INFO 35720 --- [reserva-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-10-29T12:52:40.999-05:00  INFO 35720 --- [reserva-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-10-29T12:52:40.999-05:00  INFO 35720 --- [reserva-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2025-10-29T12:52:41.000-05:00  INFO 35720 --- [reserva-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-10-29T12:52:41.043-05:00  INFO 35720 --- [reserva-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-10-29T12:54:49.932-05:00  INFO 35720 --- [reserva-service] [RMI TCP Connection(13)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-10-29T12:54:49.935-05:00  INFO 35720 --- [reserva-service] [RMI TCP Connection(13)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application RESERVA-SERVICE with eureka with status DOWN
+2025-10-29T12:54:49.935-05:00  INFO 35720 --- [reserva-service] [RMI TCP Connection(13)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1761760489935, current=DOWN, previous=UP]
+2025-10-29T12:54:49.935-05:00  INFO 35720 --- [reserva-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_RESERVA-SERVICE/reserva-service:4013414f7711d7b634e2c44100d28944: registering service...
+2025-10-29T12:54:49.938-05:00  INFO 35720 --- [reserva-service] [RMI TCP Connection(13)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-29T12:54:49.947-05:00  INFO 35720 --- [reserva-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_RESERVA-SERVICE/reserva-service:4013414f7711d7b634e2c44100d28944 - registration status: 204
+2025-10-29T12:54:49.953-05:00  INFO 35720 --- [reserva-service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-10-29T12:54:49.973-05:00  INFO 35720 --- [reserva-service] [RMI TCP Connection(13)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-29T12:54:49.978-05:00  INFO 35720 --- [reserva-service] [RMI TCP Connection(13)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-29T12:54:49.991-05:00  INFO 35720 --- [reserva-service] [RMI TCP Connection(13)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-29T12:54:49.991-05:00  INFO 35720 --- [reserva-service] [RMI TCP Connection(13)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2025-10-29T12:54:53.001-05:00  INFO 35720 --- [reserva-service] [RMI TCP Connection(13)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2025-10-29T12:54:53.025-05:00  INFO 35720 --- [reserva-service] [RMI TCP Connection(13)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_RESERVA-SERVICE/reserva-service:4013414f7711d7b634e2c44100d28944 - deregister  status: 200
+2025-10-29T12:54:53.025-05:00  INFO 35720 --- [reserva-service] [RMI TCP Connection(13)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2025-10-29T12:56:02.264-05:00  INFO 25052 --- [reserva-service] [restartedMain] org.cibertec.ReservaServiceApplication   : Starting ReservaServiceApplication using Java 21.0.8 with PID 25052 (C:\Users\ronca\OneDrive\Escritorio\Dev\DAW2\reserva-service\target\classes started by Arturo in C:\Users\ronca\OneDrive\Escritorio\Dev\DAW2\reserva-service)
+2025-10-29T12:56:02.269-05:00  INFO 25052 --- [reserva-service] [restartedMain] org.cibertec.ReservaServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-10-29T12:56:02.351-05:00  INFO 25052 --- [reserva-service] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2025-10-29T12:56:02.352-05:00  INFO 25052 --- [reserva-service] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=reserva-service, profiles=[default], label=null, version=null, state=null
+2025-10-29T12:56:02.355-05:00  INFO 25052 --- [reserva-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-10-29T12:56:02.356-05:00  INFO 25052 --- [reserva-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-10-29T12:56:04.764-05:00  INFO 25052 --- [reserva-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-29T12:56:05.025-05:00  INFO 25052 --- [reserva-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 244 ms. Found 1 JPA repository interface.
+2025-10-29T12:56:05.613-05:00  INFO 25052 --- [reserva-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=969c5c92-e76a-349f-bf48-9297470807fd
+2025-10-29T12:56:06.891-05:00  INFO 25052 --- [reserva-service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2025-10-29T12:56:06.935-05:00  INFO 25052 --- [reserva-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-29T12:56:06.936-05:00  INFO 25052 --- [reserva-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-29T12:56:07.090-05:00  INFO 25052 --- [reserva-service] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-29T12:56:07.091-05:00  INFO 25052 --- [reserva-service] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4733 ms
+2025-10-29T12:56:07.880-05:00  INFO 25052 --- [reserva-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-29T12:56:08.639-05:00  INFO 25052 --- [reserva-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@40e96120
+2025-10-29T12:56:08.644-05:00  INFO 25052 --- [reserva-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-29T12:56:08.803-05:00  INFO 25052 --- [reserva-service] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-29T12:56:08.996-05:00  INFO 25052 --- [reserva-service] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-10-29T12:56:09.122-05:00  INFO 25052 --- [reserva-service] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-29T12:56:10.020-05:00  INFO 25052 --- [reserva-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-29T12:56:10.227-05:00  INFO 25052 --- [reserva-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.34
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-29T12:56:12.245-05:00  INFO 25052 --- [reserva-service] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-29T12:56:12.269-05:00  INFO 25052 --- [reserva-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-29T12:56:12.924-05:00  WARN 25052 --- [reserva-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-29T12:56:13.000-05:00  INFO 25052 --- [reserva-service] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-10-29T12:56:13.068-05:00  INFO 25052 --- [reserva-service] [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'mesa-service' URL not provided. Will try picking an instance via load-balancing.
+2025-10-29T12:56:13.392-05:00  INFO 25052 --- [reserva-service] [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'usuario-service' URL not provided. Will try picking an instance via load-balancing.
+2025-10-29T12:56:14.081-05:00  INFO 25052 --- [reserva-service] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 18 endpoints beneath base path '/actuator'
+2025-10-29T12:56:14.839-05:00  INFO 25052 --- [reserva-service] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-10-29T12:56:14.888-05:00  WARN 25052 --- [reserva-service] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-10-29T12:56:15.059-05:00  INFO 25052 --- [reserva-service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 63171 (http) with context path '/'
+2025-10-29T12:56:15.060-05:00  INFO 25052 --- [reserva-service] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 63171
+2025-10-29T12:56:15.069-05:00  INFO 25052 --- [reserva-service] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-10-29T12:56:15.109-05:00  INFO 25052 --- [reserva-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-10-29T12:56:15.119-05:00  INFO 25052 --- [reserva-service] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-29T12:56:15.136-05:00  INFO 25052 --- [reserva-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-10-29T12:56:15.136-05:00  INFO 25052 --- [reserva-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-10-29T12:56:15.136-05:00  INFO 25052 --- [reserva-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-10-29T12:56:15.137-05:00  INFO 25052 --- [reserva-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-10-29T12:56:15.137-05:00  INFO 25052 --- [reserva-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-10-29T12:56:15.137-05:00  INFO 25052 --- [reserva-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-10-29T12:56:15.138-05:00  INFO 25052 --- [reserva-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-10-29T12:56:15.502-05:00  INFO 25052 --- [reserva-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-10-29T12:56:15.504-05:00  INFO 25052 --- [reserva-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-10-29T12:56:15.508-05:00  INFO 25052 --- [reserva-service] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-10-29T12:56:15.510-05:00  INFO 25052 --- [reserva-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1761760575509 with initial instances count: 0
+2025-10-29T12:56:15.514-05:00  INFO 25052 --- [reserva-service] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application RESERVA-SERVICE with eureka with status UP
+2025-10-29T12:56:15.516-05:00  INFO 25052 --- [reserva-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1761760575516, current=UP, previous=STARTING]
+2025-10-29T12:56:15.519-05:00  INFO 25052 --- [reserva-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_RESERVA-SERVICE/reserva-service:de8f17dd116b17b6b24cd8eb6e2f157e: registering service...
+2025-10-29T12:56:15.547-05:00  INFO 25052 --- [reserva-service] [restartedMain] org.cibertec.ReservaServiceApplication   : Started ReservaServiceApplication in 15.488 seconds (process running for 18.153)
+2025-10-29T12:56:15.587-05:00  INFO 25052 --- [reserva-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_RESERVA-SERVICE/reserva-service:de8f17dd116b17b6b24cd8eb6e2f157e - registration status: 204
+2025-10-29T12:56:15.954-05:00  INFO 25052 --- [reserva-service] [RMI TCP Connection(4)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-29T12:56:15.954-05:00  INFO 25052 --- [reserva-service] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-29T12:56:15.956-05:00  INFO 25052 --- [reserva-service] [RMI TCP Connection(4)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-10-29T12:56:45.510-05:00  INFO 25052 --- [reserva-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-10-29T12:56:45.511-05:00  INFO 25052 --- [reserva-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-10-29T12:56:45.511-05:00  INFO 25052 --- [reserva-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-10-29T12:56:45.511-05:00  INFO 25052 --- [reserva-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-10-29T12:56:45.511-05:00  INFO 25052 --- [reserva-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-10-29T12:56:45.511-05:00  INFO 25052 --- [reserva-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Application version is -1: false
+2025-10-29T12:56:45.511-05:00  INFO 25052 --- [reserva-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-10-29T12:56:45.552-05:00  INFO 25052 --- [reserva-service] [DiscoveryClient-CacheRefreshExecutor-%d] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-10-29T13:01:15.153-05:00  INFO 25052 --- [reserva-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-29T13:06:15.172-05:00  INFO 25052 --- [reserva-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-29T13:11:15.181-05:00  INFO 25052 --- [reserva-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-29T13:16:15.190-05:00  INFO 25052 --- [reserva-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-29T13:21:15.200-05:00  INFO 25052 --- [reserva-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-29T13:25:48.355-05:00  INFO 25052 --- [reserva-service] [RMI TCP Connection(47)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-10-29T13:25:48.402-05:00  INFO 25052 --- [reserva-service] [RMI TCP Connection(47)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application RESERVA-SERVICE with eureka with status DOWN
+2025-10-29T13:25:48.403-05:00  INFO 25052 --- [reserva-service] [RMI TCP Connection(47)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1761762348403, current=DOWN, previous=UP]
+2025-10-29T13:25:48.405-05:00  INFO 25052 --- [reserva-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_RESERVA-SERVICE/reserva-service:de8f17dd116b17b6b24cd8eb6e2f157e: registering service...
+2025-10-29T13:25:48.450-05:00  INFO 25052 --- [reserva-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_RESERVA-SERVICE/reserva-service:de8f17dd116b17b6b24cd8eb6e2f157e - registration status: 204
+2025-10-29T13:25:48.502-05:00  INFO 25052 --- [reserva-service] [RMI TCP Connection(47)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-10-29T13:25:48.547-05:00  INFO 25052 --- [reserva-service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-10-29T13:25:48.654-05:00  INFO 25052 --- [reserva-service] [RMI TCP Connection(47)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-10-29T13:25:48.702-05:00  INFO 25052 --- [reserva-service] [RMI TCP Connection(47)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-29T13:25:48.728-05:00  INFO 25052 --- [reserva-service] [RMI TCP Connection(47)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-29T13:25:48.731-05:00  INFO 25052 --- [reserva-service] [RMI TCP Connection(47)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2025-10-29T13:25:51.732-05:00  INFO 25052 --- [reserva-service] [RMI TCP Connection(47)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2025-10-29T13:25:51.745-05:00  INFO 25052 --- [reserva-service] [RMI TCP Connection(47)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_RESERVA-SERVICE/reserva-service:de8f17dd116b17b6b24cd8eb6e2f157e - deregister  status: 200
+2025-10-29T13:25:51.747-05:00  INFO 25052 --- [reserva-service] [RMI TCP Connection(47)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2025-10-29T13:26:03.602-05:00  INFO 36036 --- [reserva-service] [restartedMain] org.cibertec.ReservaServiceApplication   : Starting ReservaServiceApplication using Java 21.0.8 with PID 36036 (C:\Users\ronca\OneDrive\Escritorio\Dev\DAW2\reserva-service\target\classes started by Arturo in C:\Users\ronca\OneDrive\Escritorio\Dev\DAW2\reserva-service)
+2025-10-29T13:26:03.607-05:00  INFO 36036 --- [reserva-service] [restartedMain] org.cibertec.ReservaServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-10-29T13:26:03.712-05:00  INFO 36036 --- [reserva-service] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Fetching config from server at : http://localhost:8888
+2025-10-29T13:26:03.713-05:00  INFO 36036 --- [reserva-service] [restartedMain] o.s.c.c.c.ConfigServerConfigDataLoader   : Located environment: name=reserva-service, profiles=[default], label=null, version=null, state=null
+2025-10-29T13:26:03.717-05:00  INFO 36036 --- [reserva-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-10-29T13:26:03.717-05:00  INFO 36036 --- [reserva-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-10-29T13:26:08.515-05:00  INFO 36036 --- [reserva-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-10-29T13:26:09.185-05:00  INFO 36036 --- [reserva-service] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 630 ms. Found 1 JPA repository interface.
+2025-10-29T13:26:10.461-05:00  INFO 36036 --- [reserva-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=969c5c92-e76a-349f-bf48-9297470807fd
+2025-10-29T13:26:12.396-05:00  INFO 36036 --- [reserva-service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2025-10-29T13:26:12.426-05:00  INFO 36036 --- [reserva-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-29T13:26:12.428-05:00  INFO 36036 --- [reserva-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-29T13:26:12.602-05:00  INFO 36036 --- [reserva-service] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-10-29T13:26:12.602-05:00  INFO 36036 --- [reserva-service] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 8883 ms
+2025-10-29T13:26:13.359-05:00  INFO 36036 --- [reserva-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-29T13:26:14.025-05:00  INFO 36036 --- [reserva-service] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@17efe315
+2025-10-29T13:26:14.030-05:00  INFO 36036 --- [reserva-service] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-29T13:26:14.157-05:00  INFO 36036 --- [reserva-service] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-10-29T13:26:14.303-05:00  INFO 36036 --- [reserva-service] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-10-29T13:26:14.394-05:00  INFO 36036 --- [reserva-service] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-10-29T13:26:15.194-05:00  INFO 36036 --- [reserva-service] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-10-29T13:26:15.500-05:00  INFO 36036 --- [reserva-service] [restartedMain] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.34
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-10-29T13:26:18.264-05:00  INFO 36036 --- [reserva-service] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-10-29T13:26:18.274-05:00  INFO 36036 --- [reserva-service] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-10-29T13:26:19.336-05:00  WARN 36036 --- [reserva-service] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-10-29T13:26:19.449-05:00  WARN 36036 --- [reserva-service] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2025-10-29T13:26:19.556-05:00  INFO 36036 --- [reserva-service] [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'mesa-service' URL not provided. Will try picking an instance via load-balancing.
+2025-10-29T13:26:20.412-05:00  INFO 36036 --- [reserva-service] [restartedMain] o.s.c.openfeign.FeignClientFactoryBean   : For 'usuario-service' URL not provided. Will try picking an instance via load-balancing.
+2025-10-29T13:26:21.730-05:00  INFO 36036 --- [reserva-service] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 18 endpoints beneath base path '/actuator'
+2025-10-29T13:26:22.843-05:00  INFO 36036 --- [reserva-service] [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-10-29T13:26:22.895-05:00  WARN 36036 --- [reserva-service] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-10-29T13:26:23.220-05:00  INFO 36036 --- [reserva-service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 61810 (http) with context path '/'
+2025-10-29T13:26:23.223-05:00  INFO 36036 --- [reserva-service] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 61810
+2025-10-29T13:26:23.255-05:00  INFO 36036 --- [reserva-service] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-10-29T13:26:23.418-05:00  INFO 36036 --- [reserva-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-10-29T13:26:23.455-05:00  INFO 36036 --- [reserva-service] [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-29T13:26:23.483-05:00  INFO 36036 --- [reserva-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-10-29T13:26:23.490-05:00  INFO 36036 --- [reserva-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-10-29T13:26:23.490-05:00  INFO 36036 --- [reserva-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-10-29T13:26:23.492-05:00  INFO 36036 --- [reserva-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-10-29T13:26:23.492-05:00  INFO 36036 --- [reserva-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-10-29T13:26:23.492-05:00  INFO 36036 --- [reserva-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-10-29T13:26:23.492-05:00  INFO 36036 --- [reserva-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-10-29T13:26:24.121-05:00  INFO 36036 --- [reserva-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-10-29T13:26:24.128-05:00  INFO 36036 --- [reserva-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-10-29T13:26:24.135-05:00  INFO 36036 --- [reserva-service] [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-10-29T13:26:24.142-05:00  INFO 36036 --- [reserva-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1761762384142 with initial instances count: 1
+2025-10-29T13:26:24.148-05:00  INFO 36036 --- [reserva-service] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application RESERVA-SERVICE with eureka with status UP
+2025-10-29T13:26:24.150-05:00  INFO 36036 --- [reserva-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1761762384149, current=UP, previous=STARTING]
+2025-10-29T13:26:24.152-05:00  INFO 36036 --- [reserva-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_RESERVA-SERVICE/reserva-service:528b7c32091e6bf124fbe4c0f3d8a329: registering service...
+2025-10-29T13:26:24.209-05:00  INFO 36036 --- [reserva-service] [restartedMain] org.cibertec.ReservaServiceApplication   : Started ReservaServiceApplication in 23.081 seconds (process running for 26.422)
+2025-10-29T13:26:24.331-05:00  INFO 36036 --- [reserva-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_RESERVA-SERVICE/reserva-service:528b7c32091e6bf124fbe4c0f3d8a329 - registration status: 204
+2025-10-29T13:26:24.829-05:00  INFO 36036 --- [reserva-service] [RMI TCP Connection(5)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-10-29T13:26:24.830-05:00  INFO 36036 --- [reserva-service] [RMI TCP Connection(5)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-10-29T13:26:24.831-05:00  INFO 36036 --- [reserva-service] [RMI TCP Connection(5)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms

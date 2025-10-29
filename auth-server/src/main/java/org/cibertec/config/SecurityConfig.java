@@ -36,4 +36,6 @@ public class SecurityConfig {
             .httpBasic(basic -> basic.disable());
         return http.build();
     }
+    
+    
 }
