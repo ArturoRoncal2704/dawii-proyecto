@@ -5,14 +5,33 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.Data;
 
 @Entity
 @Table(name = "tb_estado_mesa")
-@Data
 public class EstadoMesa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idEstMesa;
     private String descripcion;
+    
+	public EstadoMesa(Integer idEstMesa, String descripcion) {
+		this.idEstMesa = idEstMesa;
+		this.descripcion = descripcion;
+	}
+	public EstadoMesa() {
+	}
+	public Integer getIdEstMesa() {
+		return idEstMesa;
+	}
+	public void setIdEstMesa(Integer idEstMesa) {
+		this.idEstMesa = idEstMesa;
+	}
+	public String getDescripcion() {
+		return descripcion;
+	}
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+    
+    
 }
