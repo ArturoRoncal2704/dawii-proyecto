@@ -2869,3 +2869,12 @@ com.netflix.discovery.shared.transport.TransportException: Cannot execute reques
 2025-10-29T13:26:24.829-05:00  INFO 36036 --- [reserva-service] [RMI TCP Connection(5)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2025-10-29T13:26:24.830-05:00  INFO 36036 --- [reserva-service] [RMI TCP Connection(5)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2025-10-29T13:26:24.831-05:00  INFO 36036 --- [reserva-service] [RMI TCP Connection(5)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-10-29T13:31:23.514-05:00  INFO 36036 --- [reserva-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-29T13:36:23.519-05:00  INFO 36036 --- [reserva-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-29T13:41:23.528-05:00  INFO 36036 --- [reserva-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-29T13:46:23.540-05:00  INFO 36036 --- [reserva-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-29T13:51:23.556-05:00  INFO 36036 --- [reserva-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-29T13:56:23.572-05:00  INFO 36036 --- [reserva-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-29T14:01:23.584-05:00  INFO 36036 --- [reserva-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-29T14:06:23.599-05:00  INFO 36036 --- [reserva-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-29T14:11:23.607-05:00  INFO 36036 --- [reserva-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration

@@ -3311,3 +3311,12 @@ Caused by: org.springframework.util.PlaceholderResolutionException: Could not re
 2025-10-29T13:26:23.765-05:00  INFO 20724 --- [transporte-service] [RMI TCP Connection(6)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2025-10-29T13:26:23.766-05:00  INFO 20724 --- [transporte-service] [RMI TCP Connection(6)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2025-10-29T13:26:23.769-05:00  INFO 20724 --- [transporte-service] [RMI TCP Connection(6)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-10-29T13:31:21.921-05:00  INFO 20724 --- [transporte-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-29T13:36:21.932-05:00  INFO 20724 --- [transporte-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-29T13:41:21.947-05:00  INFO 20724 --- [transporte-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-29T13:46:21.956-05:00  INFO 20724 --- [transporte-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-29T13:51:21.960-05:00  INFO 20724 --- [transporte-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-29T13:56:21.971-05:00  INFO 20724 --- [transporte-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-29T14:01:21.972-05:00  INFO 20724 --- [transporte-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-29T14:06:21.984-05:00  INFO 20724 --- [transporte-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-10-29T14:11:21.994-05:00  INFO 20724 --- [transporte-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
