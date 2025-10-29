@@ -1,5 +1,6 @@
 package org.cibertec.client;
 
+import org.cibertec.config.FeignClientConfig;
 import org.cibertec.entity.Mesa;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@FeignClient(name = "mesa-service")
+@FeignClient(name = "mesa-service", configuration = FeignClientConfig.class)
 public interface MesaFeignClient {
 	
 	@GetMapping("/api/mesas/{id}")

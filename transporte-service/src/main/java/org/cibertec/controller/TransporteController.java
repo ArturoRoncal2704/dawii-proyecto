@@ -1,6 +1,7 @@
 package org.cibertec.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.cibertec.entity.Transporte;
 import org.cibertec.service.TransporteService;
@@ -21,8 +22,7 @@ public class TransporteController {
     public ResponseEntity<?> listarTransportes() {
         List<Transporte> lista = transporteService.listarTransportes();
         if (lista.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NO_CONTENT)
-                    .body("No hay transportes registrados");
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
         }
         return ResponseEntity.ok(lista);
     }
@@ -30,11 +30,11 @@ public class TransporteController {
     @GetMapping("/{id}")
     public ResponseEntity<?> obtenerTransporte(@PathVariable Integer id) {
         Transporte transporte = transporteService.obtenerTransportePorId(id);
-        if (transporte != null) {
-            return ResponseEntity.ok(transporte);
+        if (transporte == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(Map.of("mensaje", "Transporte con ID " + id + " no encontrado"));
         }
-        return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                .body("Transporte con ID " + id + " no encontrado");
+        return ResponseEntity.ok(transporte);
     }
 
     @PostMapping
@@ -42,12 +42,16 @@ public class TransporteController {
         try {
             Transporte nuevo = transporteService.registrarTransporte(transporte);
             return ResponseEntity.status(HttpStatus.CREATED)
-                    .body("Transporte registrado correctamente con ID: " + nuevo.getIdTransporte());
+                    .body(Map.of(
+                            "mensaje", "Transporte registrado correctamente",
+                            "idTransporte", nuevo.getIdTransporte()
+                    ));
         } catch (IllegalArgumentException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body(Map.of("error", e.getMessage()));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Error al registrar el transporte");
+                    .body(Map.of("error", "Error al registrar el transporte"));
         }
     }
 
@@ -57,12 +61,13 @@ public class TransporteController {
             @RequestBody Transporte transporte) {
         try {
             transporteService.actualizarTransporte(id, transporte);
-            return ResponseEntity.ok("Transporte actualizado exitosamente");
+            return ResponseEntity.ok(Map.of("mensaje", "Transporte actualizado exitosamente"));
         } catch (IllegalArgumentException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(Map.of("error", e.getMessage()));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Error al actualizar el transporte");
+                    .body(Map.of("error", "Error al actualizar el transporte"));
         }
     }
 
@@ -70,12 +75,13 @@ public class TransporteController {
     public ResponseEntity<?> eliminarTransporte(@PathVariable Integer id) {
         try {
             transporteService.eliminarTransporte(id);
-            return ResponseEntity.ok("Transporte eliminado correctamente");
+            return ResponseEntity.ok(Map.of("mensaje", "Transporte eliminado correctamente"));
         } catch (IllegalArgumentException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(Map.of("error", e.getMessage()));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Error al eliminar el transporte");
+                    .body(Map.of("error", "Error al eliminar el transporte"));
         }
     }
 }

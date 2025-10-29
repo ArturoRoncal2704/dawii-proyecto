@@ -1,6 +1,7 @@
 package org.cibertec.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.cibertec.entity.Reserva;
 import org.cibertec.service.ReservaService;
@@ -22,8 +23,7 @@ public class ReservaController {
     public ResponseEntity<?> listarReservas() {
         List<Reserva> reservas = reservaService.listarReserva();
         if (reservas.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NO_CONTENT)
-                    .body("No hay reservas registradas.");
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
         }
         return ResponseEntity.ok(reservas);
     }
@@ -31,11 +31,11 @@ public class ReservaController {
     @GetMapping("/{id}")
     public ResponseEntity<?> obtenerReserva(@PathVariable Integer id) {
         Reserva reserva = reservaService.obtenerReservaPorId(id);
-        if (reserva != null) {
-            return ResponseEntity.ok(reserva);
+        if (reserva == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(Map.of("mensaje", "Reserva con ID " + id + " no encontrada"));
         }
-        return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                .body("Reserva con ID " + id + " no encontrada.");
+        return ResponseEntity.ok(reserva);
     }
 
     @PostMapping
@@ -43,63 +43,60 @@ public class ReservaController {
         try {
             Reserva nueva = reservaService.guardarReserva(reserva);
             return ResponseEntity.status(HttpStatus.CREATED)
-                    .body("✅ Reserva registrada correctamente con ID: " + nueva.getIdReserva());
+                    .body(Map.of("mensaje", "Reserva registrada correctamente", "idReserva", nueva.getIdReserva()));
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                    .body(e.getMessage());
+                    .body(Map.of("error", e.getMessage()));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Error al registrar la reserva.");
+                    .body(Map.of("error", "Error al registrar la reserva"));
         }
     }
 
     @PutMapping
     public ResponseEntity<?> actualizarReserva(@RequestBody Reserva reserva) {
         Reserva existente = reservaService.obtenerReservaPorId(reserva.getIdReserva());
-
         if (existente == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body("Reserva no encontrada para actualizar.");
+                    .body(Map.of("mensaje", "Reserva no encontrada para actualizar"));
         }
 
         try {
             reservaService.guardarReserva(reserva);
-            return ResponseEntity.ok("✅ Reserva actualizada correctamente");
+            return ResponseEntity.ok(Map.of("mensaje", "Reserva actualizada correctamente"));
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                    .body(e.getMessage());
+                    .body(Map.of("error", e.getMessage()));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Error al actualizar la reserva.");
+                    .body(Map.of("error", "Error al actualizar la reserva"));
         }
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> eliminarReserva(@PathVariable Integer id) {
         Reserva reservaExistente = reservaService.obtenerReservaPorId(id);
-
         if (reservaExistente == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body("Reserva con ID " + id + " no encontrada.");
+                    .body(Map.of("mensaje", "Reserva con ID " + id + " no encontrada"));
         }
 
         try {
             reservaService.eliminarReserva(id);
-            return ResponseEntity.noContent().build();
-
+            return ResponseEntity.ok(Map.of("mensaje", "Reserva eliminada correctamente"));
         } catch (DataIntegrityViolationException e) {
             return ResponseEntity.status(HttpStatus.CONFLICT)
-                    .body("No se puede eliminar la reserva porque tiene transportes asociados. " +
-                          "Primero elimine el transporte.");
+                    .body(Map.of("error", "No se puede eliminar la reserva porque tiene transportes asociados. "
+                            + "Primero elimine el transporte."));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Error al eliminar la reserva con ID " + id + ".");
+                    .body(Map.of("error", "Error al eliminar la reserva con ID " + id));
         }
     }
 
     @PostMapping("/enviar-todas")
-    public ResponseEntity<String> enviarTodasLasReservas() {
+    public ResponseEntity<?> enviarTodasLasReservas() {
         reservaService.reenviarTodasLasReservas();
-        return ResponseEntity.ok("📦 Todas las reservas fueron enviadas a RabbitMQ correctamente.");
+        return ResponseEntity.ok(Map.of("mensaje", "Todas las reservas fueron enviadas a RabbitMQ correctamente"));
     }
 }

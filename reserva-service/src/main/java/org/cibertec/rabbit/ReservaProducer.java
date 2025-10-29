@@ -22,6 +22,6 @@ public class ReservaProducer {
 
     public void enviarReserva(Reserva mensaje) {
         rabbitTemplate.convertAndSend(exchangeName, routingKey, mensaje);
-        System.out.println("📤 Enviado a RabbitMQ: " + mensaje);
+        System.out.println("Enviado a RabbitMQ: " + mensaje);
     }
 }

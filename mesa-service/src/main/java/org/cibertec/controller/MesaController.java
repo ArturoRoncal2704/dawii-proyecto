@@ -1,6 +1,7 @@
 package org.cibertec.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.cibertec.entity.Mesa;
 import org.cibertec.service.MesaService;
@@ -21,8 +22,7 @@ public class MesaController {
     public ResponseEntity<?> listarMesas() {
         List<Mesa> lista = mesaService.listarMesas();
         if (lista.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NO_CONTENT)
-                    .body("No hay mesas registradas");
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
         }
         return ResponseEntity.ok(lista);
     }
@@ -30,11 +30,11 @@ public class MesaController {
     @GetMapping("/{id}")
     public ResponseEntity<?> obtenerMesa(@PathVariable Integer id) {
         Mesa mesa = mesaService.obtenerMesaPorId(id);
-        if (mesa != null) {
-            return ResponseEntity.ok(mesa);
+        if (mesa == null) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(Map.of("mensaje", "Mesa con ID " + id + " no encontrada"));
         }
-        return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                .body("Mesa con ID " + id + " no encontrada");
+        return ResponseEntity.ok(mesa);
     }
 
     @PostMapping
@@ -42,10 +42,10 @@ public class MesaController {
         try {
             Mesa nueva = mesaService.registrarMesa(mesa);
             return ResponseEntity.status(HttpStatus.CREATED)
-                    .body("Mesa registrada exitosamente con ID: " + nueva.getIdMesa());
+                    .body(Map.of("mensaje", "Mesa registrada exitosamente", "idMesa", nueva.getIdMesa()));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Error al registrar la mesa");
+                    .body(Map.of("error", "Error al registrar la mesa"));
         }
     }
 
@@ -53,12 +53,13 @@ public class MesaController {
     public ResponseEntity<?> actualizarMesa(@PathVariable Integer id, @RequestBody Mesa mesa) {
         try {
             mesaService.actualizarMesa(id, mesa);
-            return ResponseEntity.ok("Mesa actualizada exitosamente");
+            return ResponseEntity.ok(Map.of("mensaje", "Mesa actualizada exitosamente"));
         } catch (IllegalArgumentException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(Map.of("error", e.getMessage()));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Error al actualizar la mesa");
+                    .body(Map.of("error", "Error al actualizar la mesa"));
         }
     }
 
@@ -66,12 +67,13 @@ public class MesaController {
     public ResponseEntity<?> eliminarMesa(@PathVariable Integer id) {
         try {
             mesaService.eliminarMesa(id);
-            return ResponseEntity.ok("Mesa eliminada correctamente");
+            return ResponseEntity.ok(Map.of("mensaje", "Mesa eliminada correctamente"));
         } catch (IllegalArgumentException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(Map.of("error", e.getMessage()));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Error al eliminar la mesa");
+                    .body(Map.of("error", "Error al eliminar la mesa"));
         }
     }
 
@@ -79,15 +81,14 @@ public class MesaController {
     public ResponseEntity<?> listarMesasDisponibles() {
         List<Mesa> lista = mesaService.listarMesasDisponibles();
         if (lista.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NO_CONTENT)
-                    .body("No hay mesas disponibles");
+            return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
         }
         return ResponseEntity.ok(lista);
     }
 
     @GetMapping("/disponibles/count")
-    public ResponseEntity<Long> contarMesasDisponibles() {
+    public ResponseEntity<Map<String, Long>> contarMesasDisponibles() {
         long total = mesaService.contarMesasDisponibles();
-        return ResponseEntity.ok(total);
+        return ResponseEntity.ok(Map.of("total", total));
     }
 }
