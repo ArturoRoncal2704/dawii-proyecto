@@ -1,3 +1,5 @@
-cd C:\Users\User\Documents\Ciclo 2025\Desarrollo de Aplicaciones Web II\PROYECTO\dawii-proyecto-dev
-docker build -t restaurant/config-server:1.0 -f config-server/Dockerfile .
+REM Creamos la imagen del servidor eureka
+docker build -t restaurant/config-server:1.0 -f Dockerfile .
 
+REM Iniciamos una instancia de la imagen Servidor Eureka
+docker run -d --name config-server --network restaurant-net -p 8888:8888 restaurant/config-server:1.0
