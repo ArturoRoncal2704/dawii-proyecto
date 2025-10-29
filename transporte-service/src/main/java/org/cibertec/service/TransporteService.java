@@ -31,16 +31,16 @@ public class TransporteService {
 
     @Transactional
     public Transporte registrarTransporte(Transporte transporte) {
-        if (transporte.getIdReserva() == null) {
-            throw new IllegalArgumentException("Debe especificar una reserva");
+        if (transporte.getReserva() == null || transporte.getReserva().getIdReserva() == null) {
+            throw new IllegalArgumentException("Debe especificar una reserva válida");
         }
         try {
-            Reserva reserva = reservaClient.obtenerReservaPorId(transporte.getIdReserva());
+            Reserva reserva = reservaClient.obtenerReservaPorId(transporte.getReserva().getIdReserva());
             if (reserva == null) {
                 throw new IllegalArgumentException("La reserva no existe");
             }
         } catch (FeignException.NotFound e) {
-            throw new IllegalArgumentException("La reserva con ID " + transporte.getIdReserva() + " no existe");
+            throw new IllegalArgumentException("La reserva con ID " + transporte.getReserva().getIdReserva() + " no existe");
         }
 
         if (transporte.getDireccion() == null || transporte.getDireccion().trim().isEmpty()) {

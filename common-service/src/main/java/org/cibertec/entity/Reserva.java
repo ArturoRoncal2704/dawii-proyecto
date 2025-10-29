@@ -14,11 +14,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import lombok.Data;
 
 @Entity
 @Table(name = "tb_reserva")
-@Data
 public class Reserva {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,8 +30,6 @@ public class Reserva {
     private LocalTime hora;
     
     
-    //private String hora;
-    
     private Integer numeroPersonas;
 
     @ManyToOne
@@ -43,4 +39,67 @@ public class Reserva {
     @ManyToOne
     @JoinColumn(name = "idMesa")	
     private Mesa mesa;
+
+	public Reserva(Integer idReserva, LocalDate fecha, LocalTime hora, Integer numeroPersonas, Usuario usuario,
+			Mesa mesa) {
+		this.idReserva = idReserva;
+		this.fecha = fecha;
+		this.hora = hora;
+		this.numeroPersonas = numeroPersonas;
+		this.usuario = usuario;
+		this.mesa = mesa;
+	}
+
+	public Reserva() {
+	}
+
+	public Integer getIdReserva() {
+		return idReserva;
+	}
+
+	public void setIdReserva(Integer idReserva) {
+		this.idReserva = idReserva;
+	}
+
+	public LocalDate getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(LocalDate fecha) {
+		this.fecha = fecha;
+	}
+
+	public LocalTime getHora() {
+		return hora;
+	}
+
+	public void setHora(LocalTime hora) {
+		this.hora = hora;
+	}
+
+	public Integer getNumeroPersonas() {
+		return numeroPersonas;
+	}
+
+	public void setNumeroPersonas(Integer numeroPersonas) {
+		this.numeroPersonas = numeroPersonas;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	public Mesa getMesa() {
+		return mesa;
+	}
+
+	public void setMesa(Mesa mesa) {
+		this.mesa = mesa;
+	}
+    
+    
 }

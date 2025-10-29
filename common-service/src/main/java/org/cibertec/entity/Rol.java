@@ -11,12 +11,11 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
-import lombok.Data;
+
 
 
 @Entity
 @Table(name = "tb_rol")
-@Data
 public class Rol {
 
 	@Id
@@ -27,6 +26,43 @@ public class Rol {
     private String nombre;
 
 	@JsonIgnore
-    @ManyToMany(mappedBy = "roles")
+	@ManyToMany(mappedBy = "roles")
     private Set<Usuario> usuarios;
+
+	public Rol() {
+    }
+	
+	
+	public Rol(Integer idRol, String nombre, Set<Usuario> usuarios) {
+		this.idRol = idRol;
+		this.nombre = nombre;
+		this.usuarios = usuarios;
+	}
+
+
+	public Integer getIdRol() {
+		return idRol;
+	}
+
+	public void setIdRol(Integer idRol) {
+		this.idRol = idRol;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public Set<Usuario> getUsuarios() {
+		return usuarios;
+	}
+
+	public void setUsuarios(Set<Usuario> usuarios) {
+		this.usuarios = usuarios;
+	}
+	
+	
 }
