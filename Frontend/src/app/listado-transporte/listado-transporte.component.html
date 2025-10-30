@@ -16,7 +16,7 @@
         <td>{{ t.idTransporte }}</td>
         <td>{{ t.direccion }}</td>
         <td>{{ t.numeroPasajeros }}</td>
-        <td>{{ t.idReserva }}</td>
+        <td>{{ t.reserva?.idReserva || '—' }}</td>
         <td>
           <a [routerLink]="['/home/actualizar-transporte', t.idTransporte]" class="btn btn-sm btn-outline-primary me-2">
             <i class="fas fa-edit"></i> Editar

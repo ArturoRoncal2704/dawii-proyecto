@@ -59,18 +59,22 @@ public class UsuarioService {
     @Transactional
     public Usuario actualizarUsuario(Integer id, Usuario usuario) {
         Usuario existente = obtenerUsuarioPorId(id);
-        if (existente == null) throw new IllegalArgumentException("Usuario no encontrado");
-        
-        usuario.setIdUsuario(id);
-        usuario.setContrasena(usuario.getContrasena() != null && !usuario.getContrasena().isEmpty()
-            ? encoder.encode(usuario.getContrasena())
-            : existente.getContrasena());
-        
-        if (usuario.getRoles() == null || usuario.getRoles().isEmpty()) {
-            usuario.setRoles(existente.getRoles());
+        if (existente == null) {
+            throw new IllegalArgumentException("Usuario no encontrado");
         }
-        
-        return usuarioRepo.save(usuario);
+
+        existente.setNombre(usuario.getNombre());
+        existente.setCorreo(usuario.getCorreo());
+
+        if (usuario.getRoles() != null && !usuario.getRoles().isEmpty()) {
+            existente.setRoles(usuario.getRoles());
+        }
+
+        if (usuario.getContrasena() != null && !usuario.getContrasena().isEmpty()) {
+            existente.setContrasena(encoder.encode(usuario.getContrasena()));
+        }
+
+        return usuarioRepo.save(existente);
     }
 
     @Transactional

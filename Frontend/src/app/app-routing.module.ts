@@ -23,11 +23,9 @@ import { ActualizarUsuarioComponent } from './actualizar-usuario/actualizar-usua
 import { RegistrarTransporteComponent } from './registrar-transporte/registrar-transporte.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' }, 
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'registro', component: RegistrarUsuarioComponent },
-   
-  /*{ path: 'reservas', component: ListadoReservaComponent, canActivate: [authGuard] }*/
 
   {
     path: 'home',
@@ -47,23 +45,25 @@ const routes: Routes = [
       { path: 'actualizar-estado-mesa/:id', component: ActualizarEstadoMesaComponent },
       { path: 'listar-usuarios', component: ListarUsuariosComponent },
       { path: 'actualizar-usuarios/:id', component: ActualizarUsuarioComponent },
-
       { path: '', redirectTo: 'inicio', pathMatch: 'full' }
     ]
   },
 
-
   {
     path: 'cliente',
     component: PaginaClienteComponent,
-    canActivate: [clienteGuard],
-    children: [
-      { path: 'registrar-reserva', component: RegistrarReservaComponent },
-      { path: 'registrar-transporte', component: RegistrarTransporteComponent }
-     
-    ]
+    canActivate: [clienteGuard]
+  },
+  {
+    path: 'cliente/registrar-reserva',
+    component: RegistrarReservaComponent,
+    canActivate: [clienteGuard]
+  },
+  {
+    path: 'cliente/registrar-transporte',
+    component: RegistrarTransporteComponent,
+    canActivate: [clienteGuard]
   }
-
 ];
 
 @NgModule({

@@ -6,7 +6,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-actualizar-estado-mesa',
   standalone: false,
-  
   templateUrl: './actualizar-estado-mesa.component.html',
   styleUrl: './actualizar-estado-mesa.component.css'
 })
@@ -22,6 +21,7 @@ export class ActualizarEstadoMesaComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'];
+
     this.estadoMesaService.obtenerEstadoPorId(id).subscribe({
       next: data => this.estadoMesa = data,
       error: err => {
@@ -37,7 +37,7 @@ export class ActualizarEstadoMesaComponent implements OnInit {
       return;
     }
 
-    this.estadoMesaService.actualizarEstado(this.estadoMesa).subscribe({
+    this.estadoMesaService.actualizarEstadoMesa(this.estadoMesa).subscribe({
       next: () => {
         alert('Estado actualizado con éxito');
         this.router.navigate(['/home/estado-mesa']);

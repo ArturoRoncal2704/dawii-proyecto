@@ -1,7 +1,5 @@
 package org.cibertec.entity;
 
-
-
 import java.time.LocalDate;
 import java.time.LocalTime;
 

@@ -21,7 +21,9 @@ public class ResourceServerSecurityConf {
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/public/**").permitAll()
                 .requestMatchers("/actuator/**").permitAll()
-                .requestMatchers("/api/mesas/disponibles").permitAll()  // Público
+                .requestMatchers("/api/mesas/*").permitAll()
+                .requestMatchers("/api/usuarios/count").permitAll()
+                .requestMatchers("/actuator/**").permitAll()
                 .anyRequest().authenticated()
             )
             .oauth2ResourceServer(oauth2 -> oauth2

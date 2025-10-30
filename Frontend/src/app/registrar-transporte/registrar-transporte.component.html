@@ -1,9 +1,92 @@
+<style>
+  .navbar {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(90deg, #343a40, #212529);
+  }
+
+  .navbar-brand {
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: #f8f9fa;
+    cursor: pointer;
+  }
+
+  .navbar-brand:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+  }
+
+  .navbar-nav .nav-link {
+    color: #f8f9fa !important;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-nav .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    transform: scale(1.05);
+  }
+
+  .nav-item .active {
+    border-bottom: 2px solid #ffc107;
+  }
+
+  .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+
+  .navbar-toggler-icon {
+    filter: brightness(0.8);
+  }
+</style>
+
+<!-- Navbar igual al dashboard -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="/cliente">
+      <i class="fas fa-utensils me-2 text-light"></i>Delicias Restaurante
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContenido">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarContenido">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item mx-2">
+          <a class="nav-link" routerLink="/cliente/registrar-reserva" routerLinkActive="active">
+            <i class="fas fa-calendar-check me-2 text-info"></i>Registrar Reserva
+          </a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link" routerLink="/cliente/registrar-transporte" routerLinkActive="active">
+            <i class="fas fa-bus-alt me-2 text-warning"></i>Reserva Transporte
+          </a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="nav-link text-danger" style="cursor: pointer;" (click)="logout()">
+            <i class="fas fa-sign-out-alt me-2"></i>Cerrar Sesión
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Contenido del formulario -->
 <div class="container mt-5 p-4 rounded shadow" style="background: #1f1f1f; color: #f1f1f1; border: 1px solid #444;">
-  <h3 class="mb-4 text-warning"><i class="fas fa-bus-alt me-2"></i>Registrar Transporte</h3>
+  <h3 class="mb-4 text-warning">
+    <i class="fas fa-bus-alt me-2"></i>Registrar Transporte
+  </h3>
 
   <form (ngSubmit)="registrarTransporte()">
+    <!-- Dirección -->
     <div class="mb-3">
-      <label class="form-label text-light"><i class="fas fa-map-marker-alt me-2"></i>Dirección</label>
+      <label class="form-label text-light">
+        <i class="fas fa-map-marker-alt me-2"></i>Dirección
+      </label>
       <input
         type="text"
         class="form-control bg-dark text-light border-warning shadow-sm"
@@ -14,8 +97,11 @@
       />
     </div>
 
+    <!-- Número de Pasajeros -->
     <div class="mb-3">
-      <label class="form-label text-light"><i class="fas fa-user-friends me-2"></i>Número de Pasajeros</label>
+      <label class="form-label text-light">
+        <i class="fas fa-user-friends me-2"></i>Número de Pasajeros
+      </label>
       <input
         type="number"
         class="form-control bg-dark text-light border-warning shadow-sm"
@@ -27,8 +113,15 @@
       />
     </div>
 
-    <button type="submit" class="btn btn-warning text-dark fw-bold shadow-sm">
-      <i class="fas fa-check-circle me-1"></i>Registrar Transporte
-    </button>
+    <!-- Botones -->
+    <div class="d-grid gap-2">
+      <button type="submit" class="btn btn-warning text-dark fw-bold shadow-sm">
+        <i class="fas fa-check-circle me-2"></i>Registrar Transporte
+      </button>
+
+      <button type="button" class="btn btn-secondary" routerLink="/cliente">
+        <i class="fas fa-times me-2"></i>Cancelar
+      </button>
+    </div>
   </form>
 </div>

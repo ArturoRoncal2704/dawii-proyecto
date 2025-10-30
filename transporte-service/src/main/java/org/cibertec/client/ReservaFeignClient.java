@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @FeignClient(name = "reserva-service" , 
 configuration = FeignClientConfig.class,
-fallback = ReservaFeignFallback.class
+fallback = ReservaFeignFallback.class,
+url="http://localhost:8080/transporte-service"
 )
 public interface ReservaFeignClient {
     
