@@ -14,6 +14,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 
 @Entity
 @Table(name = "tb_reserva")
@@ -29,6 +30,8 @@ public class Reserva {
     @JsonFormat(pattern = "HH:mm:ss")
     private LocalTime hora;
     
+    @Transient
+    private String origen;
     
     private Integer numeroPersonas;
 
@@ -40,17 +43,28 @@ public class Reserva {
     @JoinColumn(name = "idMesa")	
     private Mesa mesa;
 
-	public Reserva(Integer idReserva, LocalDate fecha, LocalTime hora, Integer numeroPersonas, Usuario usuario,
-			Mesa mesa) {
+	
+
+	public Reserva(Integer idReserva, LocalDate fecha, LocalTime hora, String origen, Integer numeroPersonas,
+			Usuario usuario, Mesa mesa) {
 		this.idReserva = idReserva;
 		this.fecha = fecha;
 		this.hora = hora;
+		this.origen = origen;
 		this.numeroPersonas = numeroPersonas;
 		this.usuario = usuario;
 		this.mesa = mesa;
 	}
 
 	public Reserva() {
+	}
+
+	public String getOrigen() {
+		return origen;
+	}
+
+	public void setOrigen(String origen) {
+		this.origen = origen;
 	}
 
 	public Integer getIdReserva() {

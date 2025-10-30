@@ -35,10 +35,11 @@ public class TransporteService {
             throw new IllegalArgumentException("Debe especificar una reserva válida");
         }
         try {
-            Reserva reserva = reservaClient.obtenerReservaPorId(transporte.getReserva().getIdReserva());
-            if (reserva == null) {
-                throw new IllegalArgumentException("La reserva no existe");
-            }
+        	Reserva reserva = reservaClient.obtenerReservaPorId(transporte.getReserva().getIdReserva());
+
+        	if (reserva == null || "fallback".equals(reserva.getOrigen())) {
+        	    throw new IllegalStateException("No se pudo validar la reserva. Servicio de reservas no disponible.");
+        	}
         } catch (FeignException.NotFound e) {
             throw new IllegalArgumentException("La reserva con ID " + transporte.getReserva().getIdReserva() + " no existe");
         }

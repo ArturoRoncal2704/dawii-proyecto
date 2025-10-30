@@ -51,7 +51,7 @@ public class ReservaService {
         mesaClient.actualizarMesa(mesa.getIdMesa(), mesa);
         
         reservaProducer.enviarReserva(nuevaReserva);
-        System.out.println("📨 Reserva enviada a RabbitMQ: " + nuevaReserva.getIdReserva());
+        System.out.println("Reserva enviada a RabbitMQ: " + nuevaReserva.getIdReserva());
         
         return nuevaReserva;
     }
