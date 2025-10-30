@@ -23,6 +23,7 @@ public class ResourceServerSecurityConf {
                 .requestMatchers("/actuator/**").permitAll()
                 .requestMatchers("/api/usuarios").permitAll()
                 .requestMatchers("/api/usuarios/correo/**").permitAll()
+                .requestMatchers("/api/usuarios/count").permitAll() 
                 .anyRequest().authenticated()
             )
             .oauth2ResourceServer(oauth2 -> oauth2

@@ -21,6 +21,7 @@ public class ResourceServerSecurityConf {
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/public/**").permitAll()
                 .requestMatchers("/actuator/**").permitAll()
+                .requestMatchers("/api/reserva/**").permitAll()
                 .anyRequest().authenticated()
             )
             .oauth2ResourceServer(oauth2 -> oauth2

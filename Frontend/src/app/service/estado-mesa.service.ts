@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class EstadoMesaService {
 
-  private url = 'http://localhost:8080/api/estadomesa';
+  private url = 'http://localhost:8080/mesa-service/api/estadomesa';
 
   constructor(private http: HttpClient) { }
 
@@ -17,18 +17,18 @@ export class EstadoMesaService {
   }
 
   registrarEstado(estado: { descripcion: string }): Observable<any> {
-  return this.http.post(this.url, estado, { responseType: 'text' });
-}
+    return this.http.post(this.url, estado, { responseType: 'text' });
+  }
 
-actualizarEstado(estado: EstadoMesa): Observable<any> {
-  return this.http.put(this.url, estado, { responseType: 'text' });
-}
+  actualizarEstadoMesa(estadoMesa: EstadoMesa): Observable<any> {
+    return this.http.put(`${this.url}/${estadoMesa.idEstMesa}`, estadoMesa, { responseType: 'text' });
+  }
 
-obtenerEstadoPorId(id: number): Observable<EstadoMesa> {
-  return this.http.get<EstadoMesa>(`${this.url}/${id}`);
-}
+  obtenerEstadoPorId(id: number): Observable<EstadoMesa> {
+    return this.http.get<EstadoMesa>(`${this.url}/${id}`);
+  }
 
-eliminarEstado(id: number): Observable<any> {
-  return this.http.delete(`${this.url}/${id}`, { responseType: 'text' });
-}
+  eliminarEstado(id: number): Observable<any> {
+    return this.http.delete(`${this.url}/${id}`, { responseType: 'text' });
+  }
 }

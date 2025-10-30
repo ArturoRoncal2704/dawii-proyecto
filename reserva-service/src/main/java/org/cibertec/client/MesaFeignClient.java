@@ -9,9 +9,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@FeignClient(name = "mesa-service", 
-configuration = FeignClientConfig.class , 
-fallback = MesaFeignFallback.class)
+
+@FeignClient(
+    name = "mesa-service",
+    url="http://localhost:8080/mesa-service",
+    configuration = FeignClientConfig.class,
+    fallback = MesaFeignFallback.class
+)
 public interface MesaFeignClient {
 	
 	@GetMapping("/api/mesas/{id}")

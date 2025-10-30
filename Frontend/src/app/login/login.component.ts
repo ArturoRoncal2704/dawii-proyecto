@@ -12,7 +12,7 @@ import { UsuarioService } from '../service/usuario.service';
 })  
 export class LoginComponent {
 
- correo = '';
+  correo = '';
   contrasena = '';
   error = '';
 
@@ -20,47 +20,32 @@ export class LoginComponent {
     private usuarioService: UsuarioService,
     private router: Router
   ) {}
-  /*
 
   login() {
-    const datos: LoginDTO= {
+    const datos: LoginDTO = {
       correo: this.correo,
       contrasena: this.contrasena
     };
 
     this.usuarioService.login(datos).subscribe({
-      next: (res) => {
-        localStorage.setItem('token', res.token);
-        this.router.navigate(['/home']); 
+      next: () => {
+        // ✅ El token, rol y nombre ya se guardaron en localStorage dentro del servicio
+        // Solo necesitas leer el rol para redirigir
+        const rol = localStorage.getItem('rol');
+
+        if (rol === 'ADMIN') {
+          this.router.navigate(['/home']);
+        } else if (rol === 'CLIENTE') {
+          this.router.navigate(['/cliente']); 
+        } else {
+          // Por si acaso no hay rol
+          this.router.navigate(['/cliente']); 
+        }
       },
-      error: () => {
-        this.error = 'Correo o contraseña incorrectos';
-      }
-    });
-  }*/
-
-    login() {
-    const datos: LoginDTO= {
-      correo: this.correo,
-      contrasena: this.contrasena
-    };
-
-    this.usuarioService.login(datos).subscribe({
-      next: (res) => {
-        localStorage.setItem('token', res.token);
-         localStorage.setItem('rol', res.rol);
-         localStorage.setItem('idUsuario', res.idUsuario);          
-
-      if (res.rol === 'ADMIN') {
-        this.router.navigate(['/home']);
-      } else if (res.rol === 'CLIENTE') {
-        this.router.navigate(['/cliente']); 
-      } 
-      },
-      error: () => {
+      error: (err) => {
+        console.error('Error en login:', err);
         this.error = 'Correo o contraseña incorrectos';
       }
     });
   }
-
 }

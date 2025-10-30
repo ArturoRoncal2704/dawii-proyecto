@@ -27,11 +27,16 @@
     </div>
 
     <div class="mb-3">
-      <label class="form-label">Rol</label>
-      <select [(ngModel)]="usuario.rol" name="rol" class="form-select" required>
-        <option *ngFor="let r of roles" [ngValue]="r">{{ r }}</option>
-      </select>
-    </div>
+  <label class="form-label">Rol</label>
+  <select
+    [(ngModel)]="usuario.roles"
+    name="roles"
+    class="form-select"
+    required
+  >
+    <option *ngFor="let r of roles" [ngValue]="[r]">{{ r.nombre }}</option>
+  </select>
+</div>
 
     <button class="btn btn-primary" type="submit">
       <i class="fas fa-save me-2"></i>Actualizar

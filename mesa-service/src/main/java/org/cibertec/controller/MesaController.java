@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/mesas")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:4200")
 public class MesaController {
 
     @Autowired
@@ -87,8 +87,8 @@ public class MesaController {
     }
 
     @GetMapping("/disponibles/count")
-    public ResponseEntity<Map<String, Long>> contarMesasDisponibles() {
+    public ResponseEntity<Long> contarMesasDisponibles() {
         long total = mesaService.contarMesasDisponibles();
-        return ResponseEntity.ok(Map.of("total", total));
+        return ResponseEntity.ok(total);
     }
 }

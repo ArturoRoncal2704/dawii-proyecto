@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ContadorService {
 
-  private apiUrl = 'http://localhost:8080/api/contador'
+  private apiUrl = 'http://localhost:8080/reserva-service/api/contador';
 
   constructor(private http: HttpClient) {}
 
