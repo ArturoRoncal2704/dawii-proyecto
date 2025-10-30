@@ -60,6 +60,10 @@ public class ReservaService {
         return repo.findById(id).orElse(null);
     }
 
+    public List<Reserva> listarReservasPorUsuario(Integer idUsuario) {
+        return repo.findByUsuario_IdUsuario(idUsuario);
+    }
+    
     public void eliminarReserva(Integer id) {
         repo.deleteById(id);
     }

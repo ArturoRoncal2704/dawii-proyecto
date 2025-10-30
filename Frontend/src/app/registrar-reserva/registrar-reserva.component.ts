@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ReservaService } from '../service/reserva.service';
 import { MesaService } from '../service/mesa.service';
-// ... otros imports que tengas
 
 @Component({
   selector: 'app-registrar-reserva',
@@ -34,6 +33,9 @@ export class RegistrarReservaComponent implements OnInit {
     const idUsuario = localStorage.getItem('idUsuario');
     if (idUsuario) {
       this.reserva.usuario.idUsuario = idUsuario;
+    } else {
+      alert('⚠️ No se encontró información del usuario. Por favor, inicia sesión nuevamente.');
+      this.router.navigate(['/login']);
     }
   }
 
@@ -51,14 +53,18 @@ export class RegistrarReservaComponent implements OnInit {
   }
 
   registrar(): void {
-  if (!this.reserva.fecha || !this.reserva.hora || !this.reserva.numeroPersonas || !this.reserva.mesa.idMesa) {
-    alert('Por favor completa todos los campos');
+  if (
+    !this.reserva.fecha ||
+    !this.reserva.hora ||
+    !this.reserva.numeroPersonas ||
+    !this.reserva.mesa.idMesa
+  ) {
+    alert('⚠️ Por favor completa todos los campos');
     return;
   }
 
   const reservaPayload = {
     fecha: this.reserva.fecha,
-    // 👇 aquí agregamos los segundos si no existen
     hora: this.reserva.hora.length === 5 ? this.reserva.hora + ':00' : this.reserva.hora,
     numeroPersonas: Number(this.reserva.numeroPersonas),
     usuario: { idUsuario: Number(this.reserva.usuario.idUsuario) },
@@ -68,18 +74,37 @@ export class RegistrarReservaComponent implements OnInit {
   console.log('📤 Enviando reserva:', JSON.stringify(reservaPayload, null, 2));
 
   this.reservaService.registrarReserva(reservaPayload).subscribe({
-    next: (response) => {
-      console.log('✅ Reserva registrada correctamente:', response);
-      alert('¡Reserva registrada exitosamente!');
-    },
-    error: (err) => {
-      console.error('❌ Error al registrar reserva:', err);
-      alert('Error al registrar la reserva. Intenta nuevamente.');
+  next: (response) => {
+    console.log('✅ Respuesta cruda del backend:', response);
+    let parsedResponse: any;
+    try {
+      parsedResponse = typeof response === 'string' ? JSON.parse(response) : response;
+    } catch (e) {
+      console.error('❌ Error al parsear JSON:', e);
+      parsedResponse = {};
     }
-  });
+
+    console.log('🧩 Respuesta parseada:', parsedResponse);
+
+    const idReserva = parsedResponse.idReserva;
+
+    if (idReserva) {
+      localStorage.setItem('idReserva', idReserva.toString());
+      console.log('💾 idReserva guardado en localStorage:', idReserva);
+    } else {
+      console.warn('⚠️ No se encontró idReserva en la respuesta:', parsedResponse);
+    }
+
+    alert('🎉 ¡Reserva registrada exitosamente!');
+    this.router.navigate(['/cliente/registrar-transporte']);
+  },
+  error: (err) => {
+    console.error('❌ Error al registrar reserva:', err);
+    alert('Error al registrar la reserva. Intenta nuevamente.');
+  }
+});
+
 }
-
-
 
   logout(): void {
     if (confirm('¿Estás seguro de que quieres cerrar sesión?')) {

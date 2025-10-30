@@ -1,5 +1,6 @@
 package org.cibertec.controller;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -38,16 +39,30 @@ public class ReservaController {
         return ResponseEntity.ok(reserva);
     }
 
+    @GetMapping("/usuario/{idUsuario}")
+    public ResponseEntity<?> listarReservasPorUsuario(@PathVariable Integer idUsuario) {
+        List<Reserva> reservas = reservaService.listarReservasPorUsuario(idUsuario);
+
+        if (reservas.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NO_CONTENT)
+                    .body(Map.of("mensaje", "El usuario no tiene reservas registradas"));
+        }
+
+        return ResponseEntity.ok(reservas);
+    }
     @PostMapping
-    public ResponseEntity<?> registrarReserva(@RequestBody Reserva reserva) {
+    public ResponseEntity<Map<String, Object>> registrarReserva(@RequestBody Reserva reserva) {
         try {
             Reserva nueva = reservaService.guardarReserva(reserva);
+
+            Map<String, Object> respuesta = new HashMap<>();
+            respuesta.put("idReserva", nueva.getIdReserva());
+            respuesta.put("mensaje", "Reserva registrada correctamente");
+
             return ResponseEntity.status(HttpStatus.CREATED)
-                    .body(Map.of("mensaje", "Reserva registrada correctamente", "idReserva", nueva.getIdReserva()));
-        } catch (RuntimeException e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                    .body(Map.of("error", e.getMessage()));
+                    .body(respuesta);
         } catch (Exception e) {
+            e.printStackTrace();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body(Map.of("error", "Error al registrar la reserva"));
         }
