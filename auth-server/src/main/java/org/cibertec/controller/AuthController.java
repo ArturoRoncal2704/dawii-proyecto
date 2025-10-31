@@ -51,7 +51,7 @@ public class AuthController {
                     .issuer("auth-server")
                     .issuedAt(now)
                     .expiresAt(now.plusSeconds(expiry))
-                    .subject(userDetails.getUsername()) // correo del usuario
+                    .subject(userDetails.getUsername())
                     .claim("roles", authentication.getAuthorities().stream()
                             .map(a -> a.getAuthority())
                             .collect(Collectors.toList()))
