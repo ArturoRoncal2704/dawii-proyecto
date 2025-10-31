@@ -58,10 +58,10 @@ services:
       dockerfile: auth-server/Dockerfile
     image: restaurant/auth-server:1.0
     container_name: auth-server
-    depends_on:
-      - eureka-server
     networks:
       - restaurant-net
+    ports:
+      - "8484:8484"
 
   user-service:
     build:
@@ -69,10 +69,8 @@ services:
       dockerfile: user-service/Dockerfile
     image: restaurant/user-service:1.0
     container_name: user-service
-    depends_on:
-      - eureka-server
     networks:
-      - dawii-net
+      - restaurant-net
 
   mesa-service:
     build:
@@ -81,47 +79,45 @@ services:
     image: restaurant/mesa-service:1.0
     container_name: mesa-service
     depends_on:
-      - rabbit-service
+      - rabbit
     networks:
-      - dawii-net
+      - restaurant-net
 
   reserva-service:
     build:
       context: .
-      dockerfile: recommendation-service/Dockerfile
-    image: dawii/recommendation-service:1.0
-    container_name: recommendation-service
+      dockerfile: reserva-service/Dockerfile
+    image: restaurant/reserva-service:1.0
+    container_name: reserva-service
     depends_on:
-      - rabbit-service
+      - mesa-service
+      - rabbit
     networks:
-      - dawii-net
+      - restaurant-net
 
   transporte-service:
     build:
       context: .
-      dockerfile: recommendation-service/Dockerfile
-    image: dawii/recommendation-service:1.0
-    container_name: recommendation-service
+      dockerfile: transporte-service/Dockerfile
+    image: restaurant/transporte-service:1.0
+    container_name: transporte-service
     depends_on:
-      - rabbit-service
+      - rabbit
     networks:
-      - dawii-net
+      - restaurant-net
 
+##########################
+# Crea Los volúmenes #
+##########################
+volumes:
+  mysql-data:
+    driver: local
+  config-server-data:
+    driver: local
 
-
-  ##########################
-  # Crea Los volúmenes #
-  ##########################
-  volumes:
-    mysql-data:
-      driver: local
-    config-server-data:
-      driver: local
-
-
-  ##########################
-  # Crea red de los servicios #
-  ##########################
-  networks:
-    dawii-net:
-      external: true
+##########################
+# Crea red de los servicios #
+##########################
+networks:
+  restaurant-net:
+    external: true
