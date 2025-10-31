@@ -1,88 +1,127 @@
+name: restaurant
+
 services:
 
-  eureka-server-restaurante:
-    build:
-      context: ./servicio-server
-    container_name: eureka-server-restaurante
-    ports:
-      - "8761:8761"
-    networks:
-      - db-network
-
-  newrestaurante_db:
-    image: mysql:8.0
-    container_name: newrestaurante_db
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: newrestaurante_db
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
-    ports:
-      - "3307:3306"
-    volumes:
-      - newrestaurante_db_data:/var/lib/mysql
-    networks:
-      - db-network
-
-  rabbitmq:
-    image: rabbitmq:3-management
+  rabbit:
+    image: rabbitmq:4-management
     container_name: rabbitmq
-    environment:
-      RABBITMQ_DEFAULT_USER: guest
-      RABBITMQ_DEFAULT_PASS: guest
     ports:
       - "5672:5672"
       - "15672:15672"
     networks:
-      - db-network
+      - restaurant-net
 
-  servicio-reserva:
-    image: servicio-reserva:1.0
-    container_name: servicio-reserva
-    build:
-      context: ./proyecto-reserva
-      dockerfile: Dockerfile
-    depends_on:
-      - newrestaurante_db
-      - eureka-server-restaurante
-      - rabbitmq
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    container_name: kafka
+    ports:
+      - "9092:9092"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://newrestaurante_db:3306/newrestaurante_db
-      SPRING_DATASOURCE_USERNAME: user
-      SPRING_DATASOURCE_PASSWORD: password
-      SPRING_RABBITMQ_HOST: rabbitmq
-      SPRING_RABBITMQ_PORT: 5672
-      SPRING_RABBITMQ_USERNAME: guest
-      SPRING_RABBITMQ_PASSWORD: guest
-      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka
-      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@localhost:9093
+      KAFKA_LISTENERS: PLAINTEXT://:9092,CONTROLLER://:9093
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      CLUSTER_ID: q1sh-9D8S1-dxkPZZJ07Q
+    networks:
+      - restaurant-net
+
+  eureka-server:
+    build:
+      context: eureka-server
+    image: restaurant/eureka-server:1.0
+    container_name: eureka-server
+    ports:
+      - "8761:8761"
+    networks:
+      - restaurant-net
+
+  api-gateway:
+    build:
+      context: api-gateway
+    image: restaurant/api-gateway:1.0
+    container_name: api-gateway
     ports:
       - "8080:8080"
-    networks:
-      - db-network
-
-  servicio-transporte:
-    image: servicio-transporte:1.0
-    container_name: servicio-transporte
-    build:
-      context: ./proyecto-transporte
-      dockerfile: Dockerfile
     depends_on:
-      - newrestaurante_db
-      - eureka-server-restaurante
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://newrestaurante_db:3306/newrestaurante_db
-      SPRING_DATASOURCE_USERNAME: user
-      SPRING_DATASOURCE_PASSWORD: password
-      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eureka-server:8761/eureka
-      SPRING_JPA_HIBERNATE_DDL_AUTO: update
-    ports:
-      - "8081:8081"
+      - eureka-server
     networks:
-      - db-network
+      - restaurant-net
 
-volumes:
-  newrestaurante_db_data:
+  auth-server:
+    build:
+      context: .
+      dockerfile: auth-server/Dockerfile
+    image: restaurant/auth-server:1.0
+    container_name: auth-server
+    depends_on:
+      - eureka-server
+    networks:
+      - restaurant-net
 
-networks:
-  db-network:
+  user-service:
+    build:
+      context: .
+      dockerfile: user-service/Dockerfile
+    image: restaurant/user-service:1.0
+    container_name: user-service
+    depends_on:
+      - eureka-server
+    networks:
+      - dawii-net
+
+  mesa-service:
+    build:
+      context: .
+      dockerfile: mesa-service/Dockerfile
+    image: restaurant/mesa-service:1.0
+    container_name: mesa-service
+    depends_on:
+      - rabbit-service
+    networks:
+      - dawii-net
+
+  reserva-service:
+    build:
+      context: .
+      dockerfile: recommendation-service/Dockerfile
+    image: dawii/recommendation-service:1.0
+    container_name: recommendation-service
+    depends_on:
+      - rabbit-service
+    networks:
+      - dawii-net
+
+  transporte-service:
+    build:
+      context: .
+      dockerfile: recommendation-service/Dockerfile
+    image: dawii/recommendation-service:1.0
+    container_name: recommendation-service
+    depends_on:
+      - rabbit-service
+    networks:
+      - dawii-net
+
+
+
+  ##########################
+  # Crea Los volúmenes #
+  ##########################
+  volumes:
+    mysql-data:
+      driver: local
+    config-server-data:
+      driver: local
+
+
+  ##########################
+  # Crea red de los servicios #
+  ##########################
+  networks:
+    dawii-net:
+      external: true
