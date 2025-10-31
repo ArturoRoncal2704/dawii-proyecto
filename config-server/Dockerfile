@@ -12,9 +12,9 @@ RUN mvn clean install -DskipTests
 # Desplegar la aplicación
 FROM eclipse-temurin:21-jre
 
-WORKDIR /app
+RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
 
-ENV SPRING_PROFILES_ACTIVE=docker
+WORKDIR /app
 
 # Copiamos el JAR compilado desde la imagen builder
 COPY --from=builder /workspace/target/*.jar config-server.jar
