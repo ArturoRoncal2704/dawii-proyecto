@@ -4,12 +4,20 @@ import { Reserva } from '../model/reserva';
 import { ReservaService } from '../service/reserva.service';
 import { Mesa } from '../model/mesa';
 import { MesaService } from '../service/mesa.service';
+<<<<<<< HEAD
 /*import { ActivatedRoute } from '@angular/router';*/
+=======
+import { Rol } from '../model/rol';
+>>>>>>> dev
 
 @Component({
   selector: 'app-actualizar-reserva',
   standalone: false,
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> dev
   templateUrl: './actualizar-reserva.component.html',
   styleUrl: './actualizar-reserva.component.css'
 })
@@ -25,7 +33,12 @@ export class ActualizarReservaComponent {
       nombre: '',
       correo: '',
       contrasena: '',
+<<<<<<< HEAD
       telefono: ''
+=======
+      telefono: '',
+      roles: []
+>>>>>>> dev
     },
     mesa: {
       idMesa: 0,

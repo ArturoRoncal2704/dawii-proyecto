@@ -34,6 +34,107 @@
   .navbar-toggler-icon {
     filter: brightness(0.8);
   }
+<<<<<<< HEAD
+=======
+
+  /* Estilos para el contenido principal */
+  .welcome-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .welcome-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+
+  .welcome-section p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+
+  .card-option {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .card-option:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .card-option .card-body {
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  .card-option i {
+    font-size: 5rem;
+    margin-bottom: 1.5rem;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
+
+  .card-option h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+
+  .card-option p {
+    font-size: 1.1rem;
+  }
+
+  .card-reserva {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+  }
+
+  .card-transporte {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+  }
+
+  .card-option.card-reserva p,
+  .card-option.card-transporte p {
+    color: rgba(255, 255, 255, 0.95);
+  }
+
+  /* Animación de entrada */
+  .animate-in {
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+>>>>>>> dev
 </style>
 
 <nav class="navbar navbar-expand-lg">
@@ -59,7 +160,11 @@
           </a>
         </li>
         <li class="nav-item mx-2">
+<<<<<<< HEAD
           <a class="nav-link text-danger" (click)="logout()">
+=======
+          <a class="nav-link text-danger" style="cursor: pointer;" (click)="logout()">
+>>>>>>> dev
             <i class="fas fa-sign-out-alt me-2"></i>Cerrar Sesión
           </a>
         </li>
@@ -69,5 +174,38 @@
 </nav>
 
 <div class="container mt-4">
+<<<<<<< HEAD
   <router-outlet></router-outlet>
+=======
+  <!-- Sección de Bienvenida -->
+  <div class="welcome-section animate-in">
+    <h1>
+      <i class="fas fa-user-circle me-3"></i>
+      ¡Bienvenido, {{nombreUsuario}}!
+    </h1>
+    <p>Estamos encantados de atenderte en Delicias Restaurante</p>
+  </div>
+
+  <div class="row g-4 mb-4">
+    <div class="col-md-6 animate-in">
+      <div class="card card-option card-reserva" routerLink="/cliente/registrar-reserva">
+        <div class="card-body">
+          <i class="fas fa-calendar-check"></i>
+          <h3>Reservar Mesa</h3>
+          <p>Reserva tu mesa para disfrutar de una experiencia gastronómica única</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 animate-in">
+      <div class="card card-option card-transporte" routerLink="/cliente/registrar-transporte">
+        <div class="card-body">
+          <i class="fas fa-bus-alt"></i>
+          <h3>Reservar Transporte</h3>
+          <p>Solicita nuestro servicio de transporte para llegar cómodamente</p>
+        </div>
+      </div>
+    </div>
+  </div>
+>>>>>>> dev
 </div>

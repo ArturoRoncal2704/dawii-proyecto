@@ -8,16 +8,27 @@ import { Reserva } from '../model/reserva';
 @Component({
   selector: 'app-registrar-transporte',
   standalone: false,
+<<<<<<< HEAD
   
+=======
+>>>>>>> dev
   templateUrl: './registrar-transporte.component.html',
   styleUrl: './registrar-transporte.component.css'
 })
 export class RegistrarTransporteComponent implements OnInit {
 
+<<<<<<< HEAD
     transporte: Transporte = {
     direccion: '',
     numeroPasajeros: 1,
     idReserva: 0
+=======
+  transporte: Transporte = {
+    direccion: '',
+    numeroPasajeros: 1,
+    reserva: { idReserva: 0 } as any
+
+>>>>>>> dev
   };
 
   constructor(
@@ -28,7 +39,11 @@ export class RegistrarTransporteComponent implements OnInit {
   ngOnInit(): void {
     const idReserva = localStorage.getItem('idReserva');
     if (idReserva) {
+<<<<<<< HEAD
       this.transporte.idReserva = Number(idReserva);
+=======
+      this.transporte.reserva = { idReserva: Number(idReserva) };
+>>>>>>> dev
     } else {
       alert('Primero debe registrar una reserva');
       this.router.navigate(['/cliente/registrar-reserva']);
@@ -39,7 +54,11 @@ export class RegistrarTransporteComponent implements OnInit {
     this.transporteService.registrarTransporte(this.transporte).subscribe({
       next: () => {
         alert('Transporte registrado con éxito');
+<<<<<<< HEAD
         localStorage.removeItem('idReserva'); 
+=======
+        localStorage.removeItem('idReserva');
+>>>>>>> dev
         this.router.navigate(['/cliente']);
       },
       error: (err) => {
@@ -49,9 +68,20 @@ export class RegistrarTransporteComponent implements OnInit {
     });
   }
 
+<<<<<<< HEAD
 
     
    
 }
 
 
+=======
+  logout(): void {
+    if (confirm('¿Estás seguro de que quieres cerrar sesión?')) {
+      localStorage.clear();
+      console.log('🚪 Sesión cerrada');
+      this.router.navigate(['/login']);
+    }
+  }
+}
+>>>>>>> dev

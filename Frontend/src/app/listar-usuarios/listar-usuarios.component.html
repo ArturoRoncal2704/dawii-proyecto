@@ -20,7 +20,11 @@
         <td>{{ usuario.nombre }}</td>
         <td>{{ usuario.correo }}</td>
         <td>{{ usuario.telefono }}</td>
+<<<<<<< HEAD
         <td>{{ usuario.rol }}</td>
+=======
+        <td>{{ usuario.roles && usuario.roles.length > 0 ? usuario.roles[0].nombre : '—' }}</td>
+>>>>>>> dev
         <td>
           <a [routerLink]="['/home/actualizar-usuarios', usuario.idUsuario!]" class="btn btn-sm btn-outline-primary me-2">
   <i class="fas fa-edit"></i> Editar

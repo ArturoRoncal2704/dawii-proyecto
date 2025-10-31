@@ -8,7 +8,11 @@ import { EstadoMesaService } from '../service/estado-mesa.service';
 @Component({
   selector: 'app-actualizar-mesa',
   standalone: false,
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> dev
   templateUrl: './actualizar-mesa.component.html',
   styleUrl: './actualizar-mesa.component.css'
 })
@@ -46,6 +50,7 @@ export class ActualizarMesaComponent implements OnInit {
   }
 
   actualizar(): void {
+<<<<<<< HEAD
     this.mesaService.actualizarMesa(this.mesa).subscribe({
       next: () => {
         alert('Mesa actualizada con éxito');
@@ -54,4 +59,19 @@ export class ActualizarMesaComponent implements OnInit {
       error: () => alert('Error al actualizar la mesa')
     });
   }
+=======
+  console.log('Mesa a actualizar:', this.mesa);
+
+  this.mesaService.actualizarMesa(this.mesa).subscribe({
+    next: () => {
+      alert('Mesa actualizada con éxito');
+      this.router.navigate(['/home/mesas']);
+    },
+    error: (err) => {
+      console.error(err);
+      alert('Error al actualizar la mesa');
+    }
+  });
+}
+>>>>>>> dev
 }

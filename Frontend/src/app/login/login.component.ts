@@ -12,7 +12,11 @@ import { UsuarioService } from '../service/usuario.service';
 })  
 export class LoginComponent {
 
+<<<<<<< HEAD
  correo = '';
+=======
+  correo = '';
+>>>>>>> dev
   contrasena = '';
   error = '';
 
@@ -20,15 +24,22 @@ export class LoginComponent {
     private usuarioService: UsuarioService,
     private router: Router
   ) {}
+<<<<<<< HEAD
   /*
 
   login() {
     const datos: LoginDTO= {
+=======
+
+  login() {
+    const datos: LoginDTO = {
+>>>>>>> dev
       correo: this.correo,
       contrasena: this.contrasena
     };
 
     this.usuarioService.login(datos).subscribe({
+<<<<<<< HEAD
       next: (res) => {
         localStorage.setItem('token', res.token);
         this.router.navigate(['/home']); 
@@ -58,9 +69,31 @@ export class LoginComponent {
       } 
       },
       error: () => {
+=======
+      next: () => {
+        // ✅ El token, rol y nombre ya se guardaron en localStorage dentro del servicio
+        // Solo necesitas leer el rol para redirigir
+        const rol = localStorage.getItem('rol');
+
+        if (rol === 'ADMIN') {
+          this.router.navigate(['/home']);
+        } else if (rol === 'CLIENTE') {
+          this.router.navigate(['/cliente']); 
+        } else {
+          // Por si acaso no hay rol
+          this.router.navigate(['/cliente']); 
+        }
+      },
+      error: (err) => {
+        console.error('Error en login:', err);
+>>>>>>> dev
         this.error = 'Correo o contraseña incorrectos';
       }
     });
   }
+<<<<<<< HEAD
 
 }
+=======
+}
+>>>>>>> dev

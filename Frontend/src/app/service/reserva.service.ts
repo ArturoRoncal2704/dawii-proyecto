@@ -8,7 +8,11 @@ import { Observable } from 'rxjs';
 })
 export class ReservaService {
 
+<<<<<<< HEAD
   private baseUrl=  'http://localhost:8080/api/reserva';
+=======
+  private baseUrl=  'http://localhost:8080/reserva-service/api/reserva';
+>>>>>>> dev
 
   constructor(private http: HttpClient) {}
 

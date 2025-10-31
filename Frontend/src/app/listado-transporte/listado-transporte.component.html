@@ -16,7 +16,11 @@
         <td>{{ t.idTransporte }}</td>
         <td>{{ t.direccion }}</td>
         <td>{{ t.numeroPasajeros }}</td>
+<<<<<<< HEAD
         <td>{{ t.idReserva }}</td>
+=======
+        <td>{{ t.reserva?.idReserva || '—' }}</td>
+>>>>>>> dev
         <td>
           <a [routerLink]="['/home/actualizar-transporte', t.idTransporte]" class="btn btn-sm btn-outline-primary me-2">
             <i class="fas fa-edit"></i> Editar
@@ -31,4 +35,8 @@
 
   <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
   <div *ngIf="!error && transportes.length === 0" class="alert alert-warning">No hay transportes registrados.</div>
+<<<<<<< HEAD
 </div>
+=======
+</div>
+>>>>>>> dev

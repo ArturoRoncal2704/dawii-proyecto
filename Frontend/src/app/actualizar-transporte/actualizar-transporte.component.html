@@ -4,17 +4,52 @@
   <form (ngSubmit)="actualizar()">
     <div class="mb-3">
       <label class="form-label">Dirección</label>
+<<<<<<< HEAD
       <input type="text" class="form-control" [(ngModel)]="transporte.direccion" name="direccion" required>
+=======
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="transporte.direccion"
+        name="direccion"
+        required
+      />
+>>>>>>> dev
     </div>
 
     <div class="mb-3">
       <label class="form-label">Número de Pasajeros</label>
+<<<<<<< HEAD
       <input type="number" class="form-control" [(ngModel)]="transporte.numeroPasajeros" name="numeroPasajeros" required>
     </div>
 
     <div class="mb-3">
       <label class="form-label">ID Reserva</label>
       <input type="number" class="form-control" [(ngModel)]="transporte.idReserva" name="idReserva" required>
+=======
+      <input
+        type="number"
+        class="form-control"
+        [(ngModel)]="transporte.numeroPasajeros"
+        name="numeroPasajeros"
+        required
+      />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Reserva</label>
+      <select
+            class="form-select"
+            [(ngModel)]="transporte.reserva!.idReserva"
+            name="reserva"
+            required
+          >
+            <option *ngFor="let r of reservas" [value]="r.idReserva">
+              Reserva #{{ r.idReserva }} — {{ r.usuario.nombre }}
+            </option>
+          </select>
+
+>>>>>>> dev
     </div>
 
     <button type="submit" class="btn btn-primary">Actualizar</button>
